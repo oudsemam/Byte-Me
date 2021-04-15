@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http'
+import { FormsModule} from '@angular/forms'
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -15,6 +17,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { ConversionsComponent } from './conversions/conversions.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RecipeBookComponent } from './recipe-book/recipe-book.component';
+import { FavRecipeCardComponent } from './fav-recipe-card/fav-recipe-card.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +35,14 @@ import { RecipeBookComponent } from './recipe-book/recipe-book.component';
     ConversionsComponent,
     ShoppingListComponent,
     RecipeBookComponent,
+    FavRecipeCardComponent
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

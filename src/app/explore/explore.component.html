@@ -1,1 +1,9 @@
-<p>explore works!</p>
+<input type="text" name="recipie search" [(ngModel)]="searchText" />
+<button (click)="searchByTerm()">Search</button>
+
+<!-- Keeping for reference. Will remove later. 
+    <ul>
+  <li *ngFor="let recipe of (recipies | async)?.hits">
+    {{ recipe.recipe.label }}
+  </li>
+</ul> -->

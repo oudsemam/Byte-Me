@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Observable} from 'rxjs';
+import { RecipiesService} from '../recipies.service'
 @Component({
   selector: 'app-explore',
   templateUrl: './explore.component.html',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExploreComponent implements OnInit {
 
-  constructor() { }
+  recipies: Observable<any> | null = null;
+  searchText: string = ''
+
+  constructor(private service:RecipiesService) { }
 
   ngOnInit(): void {
   }
 
+  searchByTerm(){
+    this.recipies = this.service.searchRecipiesByTerm(this.searchText)
+   
+  }
 }

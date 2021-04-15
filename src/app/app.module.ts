@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http'
 import { FormsModule} from '@angular/forms'
-
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -17,6 +16,7 @@ import { NotesComponent } from './notes/notes.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ConversionsComponent } from './conversions/conversions.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { RecipeBookComponent } from './recipe-book/recipe-book.component';
 import { FavRecipeCardComponent } from './fav-recipe-card/fav-recipe-card.component';
 
 @NgModule({
@@ -34,6 +34,7 @@ import { FavRecipeCardComponent } from './fav-recipe-card/fav-recipe-card.compon
     FavoritesComponent,
     ConversionsComponent,
     ShoppingListComponent,
+    RecipeBookComponent,
     FavRecipeCardComponent
   ],
   imports: [
@@ -43,6 +44,6 @@ import { FavRecipeCardComponent } from './fav-recipe-card/fav-recipe-card.compon
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

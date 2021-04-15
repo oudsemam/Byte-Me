@@ -1,9 +1,10 @@
 import { Injectable, NgZone } from '@angular/core';
 import { User } from './services/user';
-import { auth } from 'firebase/app';
-import { AngularFireModule } from "@angular/fire/auth";
+
+import { AngularFireAuth } from "@angular/fire/auth"
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from "@angular/router"
+import { userInfo } from 'node:os';
 
 @Injectable({
   providedIn: 'root',
@@ -33,7 +34,7 @@ export class AuthService {
 
   // Sign in with email/password
   SignIn(email, password) {
-    return this.afAuth.auth
+    return this.afAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.ngZone.run(() => {
@@ -48,7 +49,7 @@ export class AuthService {
 
   // Sign up with email/password
   SignUp(email, password) {
-    return this.afAuth.auth
+    return this.afAuth
       .createUserWithEmailAndPassword(email, password)
       .then((result) => {
         /* Call the SendVerificaitonMail() function when new user sign 
@@ -63,14 +64,14 @@ export class AuthService {
 
   // Send email verfificaiton when new user sign up
   SendVerificationMail() {
-    return this.afAuth.auth.currentUser.sendEmailVerification().then(() => {
+    return this.afAuth.currentUser.sendEmailVerification().then(() => {
       this.router.navigate(['verify-email-address']);
     });
   }
 
   // Reset Forggot password
   ForgotPassword(passwordResetEmail) {
-    return this.afAuth.auth
+    return this.afAuth
       .sendPasswordResetEmail(passwordResetEmail)
       .then(() => {
         window.alert('Password reset email sent, check your inbox.');
@@ -88,12 +89,12 @@ export class AuthService {
 
   // Sign in with Google
   GoogleAuth() {
-    return this.AuthLogin(new auth.GoogleAuthProvider());
+    return this.AuthLogin(new GoogleAuthProvider());
   }
 
   // Auth logic to run auth providers
   AuthLogin(provider) {
-    return this.afAuth.auth
+    return this.afAuth
       .signInWithPopup(provider)
       .then((result) => {
         this.ngZone.run(() => {
@@ -127,9 +128,16 @@ export class AuthService {
 
   // Sign out
   SignOut() {
-    return this.afAuth.auth.signOut().then(() => {
+    return this.afAuth.signOut().then(() => {
       localStorage.removeItem('user');
       this.router.navigate(['sign-in']);
     });
   }
+}
+
+
+//Returns true when user is logged in and email is verified
+get isLoggedIn(): boolean {
+  cost user = JSON.parse(localStorage.getItem('user'));
+  return (user !== null && userInfo.emailVerified !== false) ? true : false;
 }

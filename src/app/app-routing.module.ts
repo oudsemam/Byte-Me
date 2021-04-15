@@ -23,6 +23,7 @@ canActivate: [AuthGuard],},
 @NgModule({
   declarations: [],
   imports: [RouterModule.forRoot(routes)],
+  //unsure how to fix routes as it also is what it calls for.
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

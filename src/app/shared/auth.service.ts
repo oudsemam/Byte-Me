@@ -1,10 +1,9 @@
 import { Injectable, NgZone } from '@angular/core';
 import { User } from './services/user';
-
 import { AngularFireAuth } from "@angular/fire/auth"
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from "@angular/router"
-import { userInfo } from 'node:os';
+
 
 @Injectable({
   providedIn: 'root',
@@ -54,7 +53,7 @@ export class AuthService {
       .then((result) => {
         /* Call the SendVerificaitonMail() function when new user sign 
         up and returns promise */
-        this.SendVerificationMail();
+        // this.SendVerificationMail();
         this.SetUserData(result.user);
       })
       .catch((error) => {
@@ -62,12 +61,12 @@ export class AuthService {
       });
   }
 
-  // Send email verfificaiton when new user sign up
-  SendVerificationMail() {
-    return this.afAuth.currentUser.sendEmailVerification().then(() => {
-      this.router.navigate(['verify-email-address']);
-    });
-  }
+  // // Send email verfificaiton when new user sign up
+  // SendVerificationMail() {
+  //   return this.afAuth.currentUser.sendEmailVerification().then(() => {
+  //     this.router.navigate(['verify-email-address']);
+  //   });
+  // }
 
   // Reset Forggot password
   ForgotPassword(passwordResetEmail) {
@@ -87,10 +86,10 @@ export class AuthService {
     return user !== null && user.emailVerified !== false ? true : false;
   }
 
-  // Sign in with Google
-  GoogleAuth() {
-    return this.AuthLogin(new GoogleAuthProvider());
-  }
+  // // Sign in with Google
+  // GoogleAuth() {
+  //   return this.AuthLogin(new GoogleAuthProvider());
+  // }
 
   // Auth logic to run auth providers
   AuthLogin(provider) {
@@ -137,7 +136,7 @@ export class AuthService {
 
 
 //Returns true when user is logged in and email is verified
-get isLoggedIn(): boolean {
-  cost user = JSON.parse(localStorage.getItem('user'));
-  return (user !== null && userInfo.emailVerified !== false) ? true : false;
-}
+// get isLoggedIn(): boolean {
+//   cost user = JSON.parse(localStorage.getItem('user'));
+//   return (user !== null && userInfo.emailVerified !== false) ? true : false;
+// }

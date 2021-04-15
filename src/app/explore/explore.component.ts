@@ -8,7 +8,7 @@ import { RecipiesService} from '../recipies.service'
 })
 export class ExploreComponent implements OnInit {
 
-  recipies: Observable<any> | null = null;
+  recipes: Observable<any> | null = null;
   searchText: string = ''
 
   constructor(private service:RecipiesService) { }
@@ -17,7 +17,7 @@ export class ExploreComponent implements OnInit {
   }
 
   searchByTerm(){
-    this.recipies = this.service.searchRecipiesByTerm(this.searchText)
+    this.recipes = this.service.searchRecipiesByTerm(this.searchText)
    
   }
 }

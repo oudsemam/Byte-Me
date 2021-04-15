@@ -1,9 +1,9 @@
-<input type="text" name="recipie search" [(ngModel)]="searchText" />
+<input type="text" name="recipe search" [(ngModel)]="searchText" />
 <button (click)="searchByTerm()">Search</button>
 
 <!-- Keeping for reference. Will remove later. 
     <ul>
-  <li *ngFor="let recipe of (recipies | async)?.hits">
+  <li *ngFor="let recipe of (recipes | async)?.hits">
     {{ recipe.recipe.label }}
   </li>
 </ul> -->

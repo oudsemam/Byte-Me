@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RecipiesService } from '../recipies.service';
 import { DietaryFilter } from '../dietary-filter';
+import { CategoryFilter } from '../category-filter';
 
 @Component({
   selector: 'app-explore',
@@ -32,6 +33,33 @@ export class ExploreComponent implements OnInit {
     {
       name: 'Keto',
       initials: 'K',
+    },
+  ];
+
+  categoryFilter: CategoryFilter[] = [
+    {
+      icon: 'lemon',
+      name: 'Drinks',
+    },
+    {
+      icon: 'chicken',
+      name: 'Lunch',
+    },
+    {
+      icon: 'ice-cream',
+      name: 'Desserts',
+    },
+    {
+      icon: 'apple',
+      name: 'Snacks',
+    },
+    {
+      icon: 'bacon',
+      name: 'Breakfast',
+    },
+    {
+      icon: 'cheese',
+      name: 'Appetizers',
     },
   ];
 

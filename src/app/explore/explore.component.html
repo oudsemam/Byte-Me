@@ -2,11 +2,19 @@
 <button (click)="searchByTerm()">Search</button>
 
 <!-- Parent container for the GF, DF, V, VG, K diet filters -->
-<div class="dietifilter-parent">
+<div class="diet-filter-parent">
   <app-dietary-filter
     *ngFor="let diet of dietFilters"
     [diet]="diet"
   ></app-dietary-filter>
+</div>
+
+<div class="category-filter-parent">
+  <h2>Category</h2>
+  <app-category-filter
+    *ngFor="let category of categoryFilter"
+    [category]="category"
+  ></app-category-filter>
 </div>
 
 <!-- Keeping for reference. Will remove later. 

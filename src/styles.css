@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.byteMe-logo {
+  width: 200px;
+}
+.icon-nav {
+  position: fixed;
+  bottom: 0px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* This is where the layout will break from mobile to Desktop */
+@media only screen and (min-width: 720px) {
+  .nav-parent {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .icon-nav {
+    position: relative;
+    width: 30vw;
+  }
+}

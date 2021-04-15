@@ -1,13 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>RecipeApp</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Byte Me</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!--  Linking FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&family=Zilla+Slab:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
+  </head>
+  <body>
+    <header class="nav-parent">
+      <div class="byteMe-logo">
+        <img src="assets/byte-me-logo.svg" alt="Byte Me logo" />
+      </div>
+      <!-- This navigation will be fixed on mobile, but will appear in top right using flexbox on desktop -->
+      <nav class="icon-nav">
+        <!-- Explore -->
+        <a href="#" aria-label="Explore recipes"
+          ><i class="far fa-compass fa-lg"></i
+        ></a>
+        <!-- Favorites -->
+        <a href="#" aria-label="View favorited recipes"
+          ><i class="far fa-heart fa-lg"></i
+        ></a>
+        <!-- Recipe Book -->
+        <a href="#" aria-label="View saved recipe book"
+          ><i class="fas fa-book fa-lg"></i
+        ></a>
+        <!-- Calculator -->
+        <a href="#" aria-label="Calculate conversions"
+          ><i class="fas fa-calculator fa-lg"></i
+        ></a>
+        <!-- Shopping List -->
+        <a href="#" aria-label="View shopping list"
+          ><i class="far fa-list-alt fa-lg"></i
+        ></a>
+      </nav>
+    </header>
+    <app-root> </app-root>
+    <!-- This is the "Powered By Edamam API badge, it will be moved later, but we must include it" -->
+    <div id="edamam-badge" data-color="white"></div>
+  </body>
 </html>

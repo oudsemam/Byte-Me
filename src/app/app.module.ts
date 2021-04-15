@@ -16,6 +16,22 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { ConversionsComponent } from './conversions/conversions.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 
+// Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+import { DashboardComponent } from './FireBase/dashboard/dashboard.component';
+import { SignInComponent } from './FireBase/sign-in/sign-in.component';
+import { SignUpComponent } from './FireBase/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './FireBase/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './FireBase/verify-email/verify-email.component';
+
+//Auth service
+import { AuthService } from './shared/services/auth.service'
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,13 +46,25 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
     NotesComponent,
     FavoritesComponent,
     ConversionsComponent,
-    ShoppingListComponent
+    ShoppingListComponent,
+    DashboardComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(
+      environment.firebaseConfig,
+      'Byte Me Recipe App'
+    ),
+    AngularFirestoreModule, // Only required for database features
+    AngularFireAuthModule, // Only required for auth features,
+    AngularFireStorageModule, // Only required for storage features
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AuthService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

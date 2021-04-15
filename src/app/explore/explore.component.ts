@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs';
-import { RecipiesService} from '../recipies.service'
+import { RecipiesService} from '../recipes.service'
 @Component({
   selector: 'app-explore',
   templateUrl: './explore.component.html',

@@ -1,6 +1,14 @@
 <input type="text" name="recipie search" [(ngModel)]="searchText" />
 <button (click)="searchByTerm()">Search</button>
 
+<!-- Parent container for the GF, DF, V, VG, K diet filters -->
+<div class="dietifilter-parent">
+  <app-dietary-filter
+    *ngFor="let diet of dietFilters"
+    [diet]="diet"
+  ></app-dietary-filter>
+</div>
+
 <!-- Keeping for reference. Will remove later. 
     <ul>
   <li *ngFor="let recipe of (recipies | async)?.hits">

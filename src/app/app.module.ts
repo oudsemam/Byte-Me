@@ -18,6 +18,9 @@ import { ConversionsComponent } from './conversions/conversions.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RecipeBookComponent } from './recipe-book/recipe-book.component';
 import { FavRecipeCardComponent } from './fav-recipe-card/fav-recipe-card.component';
+import { DietaryFilterComponent } from './dietary-filter/dietary-filter.component';
+import { CategoryFilterComponent } from './category-filter/category-filter.component';
+import { LocationFilterComponent } from './location-filter/location-filter.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { FavRecipeCardComponent } from './fav-recipe-card/fav-recipe-card.compon
     ConversionsComponent,
     ShoppingListComponent,
     RecipeBookComponent,
-    FavRecipeCardComponent
+    FavRecipeCardComponent,
+    DietaryFilterComponent,
+    CategoryFilterComponent,
+    LocationFilterComponent
   ],
   imports: [
     BrowserModule,

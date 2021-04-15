@@ -1,23 +1,45 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs';
-import { RecipiesService} from '../recipies.service'
+import { Observable } from 'rxjs';
+import { RecipiesService } from '../recipies.service';
+import { DietaryFilter } from '../dietary-filter';
+
 @Component({
   selector: 'app-explore',
   templateUrl: './explore.component.html',
-  styleUrls: ['./explore.component.css']
+  styleUrls: ['./explore.component.css'],
 })
 export class ExploreComponent implements OnInit {
-
   recipies: Observable<any> | null = null;
-  searchText: string = ''
+  searchText: string = '';
 
-  constructor(private service:RecipiesService) { }
+  dietFilters: DietaryFilter[] = [
+    {
+      name: 'Gluten-free',
+      initials: 'GF',
+    },
+    {
+      name: 'Dairy-free',
+      initials: 'DF',
+    },
+    {
+      name: 'Vegan',
+      initials: 'V',
+    },
+    {
+      name: 'Vegetarian',
+      initials: 'VG',
+    },
+    {
+      name: 'Keto',
+      initials: 'K',
+    },
+  ];
 
-  ngOnInit(): void {
-  }
+  constructor(private service: RecipiesService) {}
 
-  searchByTerm(){
-    this.recipies = this.service.searchRecipiesByTerm(this.searchText)
-   
+  ngOnInit(): void {}
+
+  searchByTerm() {
+    this.recipies = this.service.searchRecipiesByTerm(this.searchText);
   }
 }

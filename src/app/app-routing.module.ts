@@ -10,12 +10,15 @@ import { AuthGuard } from '../app/shared/guard/auth.guard';
 import { VerifyEmailComponent } from '../app/FireBase/verify-email/verify-email.component';
 import { Routes, RouterModule } from '@angular/router';
 
-const FireBaseRoutes: Routes = [
+const routes: Routes = [
   { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
   { path: 'sign-in', component: SignInComponent },
   { path: 'register-user', component: SignUpComponent },
-  {path: 'dashboard',component: DashboardComponent,
-canActivate: [AuthGuard],},
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+  },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'verify-email-address', component: VerifyEmailComponent },
 ];
@@ -23,7 +26,6 @@ canActivate: [AuthGuard],},
 @NgModule({
   declarations: [],
   imports: [RouterModule.forRoot(routes)],
-  //unsure how to fix routes as it also is what it calls for.
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

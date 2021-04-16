@@ -3,6 +3,15 @@ import { Observable } from 'rxjs';
 import { RecipiesService } from '../recipies.service';
 import { DietaryFilter } from '../dietary-filter';
 import { CategoryFilter } from '../category-filter';
+import { LocationFilter } from '../location-filter';
+import {
+  faAppleAlt,
+  faBacon,
+  faCheese,
+  faDrumstickBite,
+  faIceCream,
+  faLemon,
+} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-explore',
@@ -12,6 +21,12 @@ import { CategoryFilter } from '../category-filter';
 export class ExploreComponent implements OnInit {
   recipies: Observable<any> | null = null;
   searchText: string = '';
+  faCheese = faCheese;
+  faDrumstickBite = faDrumstickBite;
+  faLemon = faLemon;
+  faIceCream = faIceCream;
+  faAppleAlt = faAppleAlt;
+  faBacon = faBacon;
 
   dietFilters: DietaryFilter[] = [
     {
@@ -38,28 +53,43 @@ export class ExploreComponent implements OnInit {
 
   categoryFilter: CategoryFilter[] = [
     {
-      icon: 'lemon',
+      icon: 'faLemon',
       name: 'Drinks',
     },
     {
-      icon: 'chicken',
+      icon: 'faDrumstickBite',
       name: 'Lunch',
     },
     {
-      icon: 'ice-cream',
+      icon: 'faIceCream',
       name: 'Desserts',
     },
     {
-      icon: 'apple',
+      icon: 'faAppleAlt',
       name: 'Snacks',
     },
     {
-      icon: 'bacon',
+      icon: 'faBacon',
       name: 'Breakfast',
     },
     {
-      icon: 'cheese',
+      icon: 'faCheese',
       name: 'Appetizers',
+    },
+  ];
+
+  locationFilter: LocationFilter[] = [
+    {
+      location: 'Indian',
+    },
+    {
+      location: 'Italian',
+    },
+    {
+      location: 'Asian',
+    },
+    {
+      location: 'Mexican',
     },
   ];
 

@@ -7,3 +7,10 @@
   background-color: #e7e7e7;
   padding: 10px 0;
 }
+
+.location-filter-parent {
+  display: flex;
+}
+.location-filter-parent h2 {
+  display: block;
+}

@@ -22,6 +22,8 @@ import { DietaryFilterComponent } from './dietary-filter/dietary-filter.componen
 import { CategoryFilterComponent } from './category-filter/category-filter.component';
 import { LocationFilterComponent } from './location-filter/location-filter.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { RecipeCardResultComponent } from './recipe-card-result/recipe-card-result.component';
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -64,6 +66,8 @@ import { AuthService } from './shared/auth.service'
     DietaryFilterComponent,
     CategoryFilterComponent,
     LocationFilterComponent,
+    SearchBarComponent,
+    RecipeCardResultComponent,
   ],
   imports: [
     BrowserModule,

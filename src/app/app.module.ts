@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -15,6 +16,12 @@ import { NotesComponent } from './notes/notes.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { ConversionsComponent } from './conversions/conversions.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { RecipeBookComponent } from './recipe-book/recipe-book.component';
+import { FavRecipeCardComponent } from './fav-recipe-card/fav-recipe-card.component';
+import { DietaryFilterComponent } from './dietary-filter/dietary-filter.component';
+import { CategoryFilterComponent } from './category-filter/category-filter.component';
+import { LocationFilterComponent } from './location-filter/location-filter.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -52,6 +59,11 @@ import { AuthService } from './shared/services/auth.service'
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
+    RecipeBookComponent,
+    FavRecipeCardComponent,
+    DietaryFilterComponent,
+    CategoryFilterComponent,
+    LocationFilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +75,10 @@ import { AuthService } from './shared/services/auth.service'
     AngularFirestoreModule, // Only required for database features
     AngularFireAuthModule, // Only required for auth features,
     AngularFireStorageModule, // Only required for storage features
+
+    HttpClientModule,
+    FormsModule,
+    FontAwesomeModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

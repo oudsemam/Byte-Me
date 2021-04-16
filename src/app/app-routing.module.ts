@@ -12,10 +12,9 @@ import { SignInComponent } from '../app/FireBase/sign-in/sign-in.component';
 import { SignUpComponent } from '../app/FireBase/sign-up/sign-up.component';
 import { DashboardComponent } from '../app/FireBase/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from '../app/FireBase/forgot-password/forgot-password.component';
-import { AuthGuard } from '../../node_modules/@angular/fire/auth-guard/auth-guard';
+import { AuthGuard } from '../app/shared/guard/auth.guard';
 import { VerifyEmailComponent } from '../app/FireBase/verify-email/verify-email.component';
 
-  
 const routes: Routes = [
   //Sign in routes
   { 
@@ -31,7 +30,8 @@ const routes: Routes = [
   },
   { 
     path: 'dashboard', 
-    component: DashboardComponent 
+    component: DashboardComponent,
+    canActivate: [AuthGuard], 
   },
   { 
     path: 'forgot-password', 

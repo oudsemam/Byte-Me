@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Observable } from 'rxjs';
 import { RecipiesService } from '../recipies.service';
 import { DietaryFilter } from '../dietary-filter';
@@ -12,6 +13,7 @@ import {
   faIceCream,
   faLemon,
 } from '@fortawesome/free-solid-svg-icons';
+import { FileDetector } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-explore',
@@ -19,6 +21,7 @@ import {
   styleUrls: ['./explore.component.css'],
 })
 export class ExploreComponent implements OnInit {
+
   recipies: Observable<any> | null = null;
   searchText: string = '';
   faCheese = faCheese;
@@ -27,6 +30,14 @@ export class ExploreComponent implements OnInit {
   faIceCream = faIceCream;
   faAppleAlt = faAppleAlt;
   faBacon = faBacon;
+  vegan: boolean = false
+  vegatarian: boolean = false
+  glutenFree: boolean = false
+  dairyFree: boolean = false
+  keto: boolean = false
+  catagory: string = ""
+  cuisine: string = ""
+
 
   dietFilters: DietaryFilter[] = [
     {
@@ -97,7 +108,26 @@ export class ExploreComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  searchByTerm() {
-    this.recipies = this.service.searchRecipiesByTerm(this.searchText);
+
+  search(){
+    let healthfilters: string[] = []
+    if (this.vegan){
+      healthfilters.push('vegan')
+    }
+    if (this.vegatarian){
+      healthfilters.push('vegatarian')
+    }
+    if (this.glutenFree){
+      healthfilters.push('gluten-free')
+    }
+    if (this.dairyFree){
+      healthfilters.push('dairy-free')
+    }
+    if (this.keto){
+      healthfilters.push('keto-friendly')
+    }
+    
+    this.recipes = this.service.searchRecipies(this.searchText, healthfilters, this.catagory, this.cuisine)
+   
   }
 }

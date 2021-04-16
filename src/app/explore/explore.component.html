@@ -1,5 +1,5 @@
-<input type="text" name="recipie search" [(ngModel)]="searchText" />
-<button (click)="searchByTerm()">Search</button>
+<input type="text" name="recipe search" [(ngModel)]="searchText" />
+<button (click)="search()">Search</button>
 
 <!-- Parent container for the GF, DF, V, VG, K diet filters -->
 <div class="diet-filter-parent">
@@ -29,7 +29,7 @@
 
 <!-- Keeping for reference. Will remove later. 
     <ul>
-  <li *ngFor="let recipe of (recipies | async)?.hits">
+  <li *ngFor="let recipe of (recipes | async)?.hits">
     {{ recipe.recipe.label }}
   </li>
 </ul> -->

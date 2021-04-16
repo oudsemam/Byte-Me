@@ -10,7 +10,7 @@ export class RecipiesService {
 
 
   //Retruns list of recipies matching search term in form
-  searchRecipies( searchTerm: string, dietSelection: string[], catagory: string, cuisine: string){
+  searchRecipes( searchTerm: string, dietSelection: string[], catagory: string, cuisine: string){
     let options = ""
     let catagoryInput = ""
     if(catagory != ""){let catagoryInput = `&${catagory}`}

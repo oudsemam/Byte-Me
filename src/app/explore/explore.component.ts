@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
-import { RecipiesService } from '../recipies.service';
+import { RecipiesService } from '../recipes.service';
 import { DietaryFilter } from '../dietary-filter';
 import { CategoryFilter } from '../category-filter';
 import { LocationFilter } from '../location-filter';
@@ -22,7 +22,7 @@ import { FileDetector } from 'selenium-webdriver';
 })
 export class ExploreComponent implements OnInit {
 
-  recipies: Observable<any> | null = null;
+  recipes: Observable<any> | null = null;
   searchText: string = '';
   faCheese = faCheese;
   faDrumstickBite = faDrumstickBite;
@@ -127,7 +127,7 @@ export class ExploreComponent implements OnInit {
       healthfilters.push('keto-friendly')
     }
     
-    this.recipes = this.service.searchRecipies(this.searchText, healthfilters, this.catagory, this.cuisine)
+    this.recipes = this.service.searchRecipes(this.searchText, healthfilters, this.catagory, this.cuisine)
    
   }
 }

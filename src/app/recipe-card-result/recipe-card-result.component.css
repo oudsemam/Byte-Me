@@ -1,0 +1,4 @@
+.recipe-card-result {
+  display: flex;
+  border: 1px solid black;
+}

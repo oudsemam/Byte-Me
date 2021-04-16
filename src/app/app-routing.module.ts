@@ -6,11 +6,16 @@ import { ConversionsComponent } from './conversions/conversions.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RecipeBookComponent } from './recipe-book/recipe-book.component';
 import { CommonModule } from '@angular/common';
+import { ResultsComponent } from './results/results.component';
 
 const routes: Routes = [
   {
     path: 'explore',
     component: ExploreComponent,
+  },
+  {
+    path: 'results',
+    component: ResultsComponent,
   },
   {
     path: 'favorites',

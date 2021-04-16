@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Observable } from 'rxjs';
-import { RecipiesService } from '../recipies.service';
 import { DietaryFilter } from '../dietary-filter';
 import { CategoryFilter } from '../category-filter';
 import { LocationFilter } from '../location-filter';
+
 import {
   faAppleAlt,
   faBacon,
@@ -13,7 +11,6 @@ import {
   faIceCream,
   faLemon,
 } from '@fortawesome/free-solid-svg-icons';
-import { FileDetector } from 'selenium-webdriver';
 
 @Component({
   selector: 'app-explore',
@@ -21,23 +18,12 @@ import { FileDetector } from 'selenium-webdriver';
   styleUrls: ['./explore.component.css'],
 })
 export class ExploreComponent implements OnInit {
-
-  recipies: Observable<any> | null = null;
-  searchText: string = '';
   faCheese = faCheese;
   faDrumstickBite = faDrumstickBite;
   faLemon = faLemon;
   faIceCream = faIceCream;
   faAppleAlt = faAppleAlt;
   faBacon = faBacon;
-  vegan: boolean = false
-  vegatarian: boolean = false
-  glutenFree: boolean = false
-  dairyFree: boolean = false
-  keto: boolean = false
-  catagory: string = ""
-  cuisine: string = ""
-
 
   dietFilters: DietaryFilter[] = [
     {
@@ -91,43 +77,62 @@ export class ExploreComponent implements OnInit {
 
   locationFilter: LocationFilter[] = [
     {
+      location: 'American',
+    },
+    {
+      location: 'Asian',
+    },
+    {
+      location: 'British',
+    },
+    {
+      location: 'Caribbean',
+    },
+    {
+      location: 'Central Europe',
+    },
+    {
+      location: 'Chinese',
+    },
+    {
+      location: 'Eastern Europe',
+    },
+    {
+      location: 'French',
+    },
+    {
       location: 'Indian',
     },
     {
       location: 'Italian',
     },
     {
-      location: 'Asian',
+      location: 'Japanese',
+    },
+    {
+      location: 'Kosher',
+    },
+    {
+      location: 'Mediterranean',
     },
     {
       location: 'Mexican',
     },
+    {
+      location: 'Middle Eastern',
+    },
+    {
+      location: 'Nordic',
+    },
+    {
+      location: 'South American',
+    },
+    {
+      location: 'South East Asian',
+    },
   ];
 
-  constructor(private service: RecipiesService) {}
+  constructor() {}
 
   ngOnInit(): void {}
-
-
-  search(){
-    let healthfilters: string[] = []
-    if (this.vegan){
-      healthfilters.push('vegan')
-    }
-    if (this.vegatarian){
-      healthfilters.push('vegatarian')
-    }
-    if (this.glutenFree){
-      healthfilters.push('gluten-free')
-    }
-    if (this.dairyFree){
-      healthfilters.push('dairy-free')
-    }
-    if (this.keto){
-      healthfilters.push('keto-friendly')
-    }
-    
-    this.recipes = this.service.searchRecipies(this.searchText, healthfilters, this.catagory, this.cuisine)
-   
-  }
 }

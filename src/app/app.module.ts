@@ -22,6 +22,8 @@ import { DietaryFilterComponent } from './dietary-filter/dietary-filter.componen
 import { CategoryFilterComponent } from './category-filter/category-filter.component';
 import { LocationFilterComponent } from './location-filter/location-filter.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SearchBarComponent } from './search-bar/search-bar.component';
+import { RecipeCardResultComponent } from './recipe-card-result/recipe-card-result.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     DietaryFilterComponent,
     CategoryFilterComponent,
     LocationFilterComponent,
+    SearchBarComponent,
+    RecipeCardResultComponent,
   ],
   imports: [
     BrowserModule,

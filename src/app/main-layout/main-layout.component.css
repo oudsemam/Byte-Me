@@ -1,0 +1,24 @@
+.byteMe-logo {
+  width: 200px;
+}
+.icon-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* This is where the layout will break from mobile to Desktop */
+@media only screen and (min-width: 720px) {
+  .nav-parent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .icon-nav {
+    position: relative;
+    width: 30vw;
+  }
+}

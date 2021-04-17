@@ -24,6 +24,7 @@ import { LocationFilterComponent } from './location-filter/location-filter.compo
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { RecipeCardResultComponent } from './recipe-card-result/recipe-card-result.component';
+import { CategoryResultsComponent } from './category-results/category-results.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { RecipeCardResultComponent } from './recipe-card-result/recipe-card-resu
     LocationFilterComponent,
     SearchBarComponent,
     RecipeCardResultComponent,
+    CategoryResultsComponent,
   ],
   imports: [
     BrowserModule,

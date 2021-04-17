@@ -7,6 +7,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RecipeBookComponent } from './recipe-book/recipe-book.component';
 import { CommonModule } from '@angular/common';
 import { ResultsComponent } from './results/results.component';
+import { CategoryResultsComponent } from './category-results/category-results.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'shoppingList',
     component: ShoppingListComponent,
+  },
+  {
+    path: 'categoryResults',
+    component: CategoryResultsComponent,
   },
   { path: '', redirectTo: '/explore', pathMatch: 'full' },
 ];

@@ -1,0 +1,9 @@
+.recipe-time-parent {
+  display: flex;
+  flex-direction: row;
+}
+
+.recipe-time-child {
+  display: flex;
+  flex-direction: row;
+}

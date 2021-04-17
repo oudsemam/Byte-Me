@@ -1,7 +1,17 @@
-<div>
+<!-- Container for entire time componenet -->
+<div class="recipe-time-parent">
+  <!-- clock icon -->
   <fa-icon [icon]="faClock"></fa-icon>
-  <app-recipe-card-time
-    *ngFor="let time of recipeTiming"
-    [time]="time"
-  ></app-recipe-card-time>
+  <!-- container for values -->
+  <div class="recipe-time-child">
+    <app-recipe-card-time
+      *ngFor="let time of recipeTiming"
+      [time]="time"
+    ></app-recipe-card-time>
+  </div>
+</div>
+
+<!-- Container for entire servings componenet -->
+<div class="servings-parent">
+  <app-recipe-card-servings></app-recipe-card-servings>
 </div>

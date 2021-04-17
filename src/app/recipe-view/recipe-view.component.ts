@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
+import { RecipeCardResult } from '../recipe-card-result';
 
 @Component({
   selector: 'app-recipe-view',
@@ -20,6 +21,20 @@ export class RecipeViewComponent implements OnInit {
     {
       type: 'Calories',
       amount: '540',
+    },
+  ];
+
+  sampleResults: RecipeCardResult[] = [
+    {
+      glutenFree: true,
+      dairyFree: true,
+      vegetarian: true,
+      vegan: true,
+      keto: true,
+      name: 'Yogurt Cheescake',
+      time: '40 mins',
+      mealType: 'DESSERT',
+      favorite: true,
     },
   ];
 

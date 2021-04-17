@@ -1,0 +1,14 @@
+.ingredient-amount-container {
+  display: flex;
+}
+
+.measurement {
+  padding-right: 5px;
+}
+
+.ingredient-parent {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  margin: 2px 0;
+}

@@ -24,6 +24,12 @@ import { LocationFilterComponent } from './location-filter/location-filter.compo
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { RecipeCardResultComponent } from './recipe-card-result/recipe-card-result.component';
+import { CategoryResultsComponent } from './category-results/category-results.component';
+import { RecipeCardTimeComponent } from './recipe-card-time/recipe-card-time.component';
+import { RecipeCardServingsComponent } from './recipe-card-servings/recipe-card-servings.component';
+import { RecipeViewIngredientsComponent } from './recipe-view-ingredients/recipe-view-ingredients.component';
+import { RecipeViewDirectionsComponent } from './recipe-view-directions/recipe-view-directions.component';
+import { RecipeViewNotesComponent } from './recipe-view-notes/recipe-view-notes.component';
 
 // Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -68,6 +74,12 @@ import { AuthService } from './shared/auth.service'
     LocationFilterComponent,
     SearchBarComponent,
     RecipeCardResultComponent,
+    CategoryResultsComponent,
+    RecipeCardTimeComponent,
+    RecipeCardServingsComponent,
+    RecipeViewIngredientsComponent,
+    RecipeViewDirectionsComponent,
+    RecipeViewNotesComponent,
   ],
   imports: [
     BrowserModule,

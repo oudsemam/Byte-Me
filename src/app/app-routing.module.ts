@@ -7,6 +7,9 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { RecipeBookComponent } from './recipe-book/recipe-book.component';
 import { CommonModule } from '@angular/common';
 import { ResultsComponent } from './results/results.component';
+import { CategoryResultsComponent } from './category-results/category-results.component';
+import { RecipeViewComponent } from './recipe-view/recipe-view.component';
+import { from } from 'rxjs';
 
 //FireBase
 import { SignInComponent } from '../app/FireBase/sign-in/sign-in.component';
@@ -68,6 +71,17 @@ const routes: Routes = [
     path: 'shoppingList',
     component: ShoppingListComponent,
   },
+
+  {
+    path: 'categoryResults',
+    component: CategoryResultsComponent,
+  },
+  {
+    path: 'recipeView',
+    component: RecipeViewComponent,
+  },
+  { path: '', redirectTo: '/explore', pathMatch: 'full' },
+
 ];
 
 @NgModule({

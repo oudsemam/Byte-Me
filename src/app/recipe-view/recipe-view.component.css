@@ -1,0 +1,27 @@
+.recipe-top-container {
+  border: 1px solid green;
+  padding: 5px;
+  margin: 5px;
+}
+
+.recipe-time-parent {
+  display: flex;
+  flex-direction: row;
+}
+
+.recipe-time-child {
+  display: flex;
+  flex-direction: row;
+}
+
+.ingredient-parent {
+  border: 1px solid green;
+  padding: 5px;
+  margin: 5px;
+}
+
+.direction-parent {
+  border: 1px solid green;
+  padding: 5px;
+  margin: 5px;
+}

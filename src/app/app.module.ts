@@ -31,6 +31,22 @@ import { RecipeViewIngredientsComponent } from './recipe-view-ingredients/recipe
 import { RecipeViewDirectionsComponent } from './recipe-view-directions/recipe-view-directions.component';
 import { RecipeViewNotesComponent } from './recipe-view-notes/recipe-view-notes.component';
 
+// Firebase
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+import { DashboardComponent } from './FireBase/dashboard/dashboard.component';
+import { SignInComponent } from './FireBase/sign-in/sign-in.component';
+import { SignUpComponent } from './FireBase/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './FireBase/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './FireBase/verify-email/verify-email.component';
+
+//Auth service
+import { AuthService } from './shared/auth.service'
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +62,11 @@ import { RecipeViewNotesComponent } from './recipe-view-notes/recipe-view-notes.
     FavoritesComponent,
     ConversionsComponent,
     ShoppingListComponent,
+    DashboardComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
     RecipeBookComponent,
     FavRecipeCardComponent,
     DietaryFilterComponent,
@@ -63,11 +84,19 @@ import { RecipeViewNotesComponent } from './recipe-view-notes/recipe-view-notes.
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(
+      environment.firebaseConfig,
+      'Byte Me Recipe App'
+    ),
+    AngularFirestoreModule, // Only required for database features
+    AngularFireAuthModule, // Only required for auth features,
+    AngularFireStorageModule, // Only required for storage features
+
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

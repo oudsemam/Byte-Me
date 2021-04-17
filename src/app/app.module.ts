@@ -25,6 +25,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { RecipeCardResultComponent } from './recipe-card-result/recipe-card-result.component';
 import { CategoryResultsComponent } from './category-results/category-results.component';
+import { RecipeCardTimeComponent } from './recipe-card-time/recipe-card-time.component';
+import { RecipeCardServingsComponent } from './recipe-card-servings/recipe-card-servings.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { CategoryResultsComponent } from './category-results/category-results.co
     SearchBarComponent,
     RecipeCardResultComponent,
     CategoryResultsComponent,
+    RecipeCardTimeComponent,
+    RecipeCardServingsComponent,
   ],
   imports: [
     BrowserModule,

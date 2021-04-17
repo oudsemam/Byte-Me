@@ -8,6 +8,8 @@ import { RecipeBookComponent } from './recipe-book/recipe-book.component';
 import { CommonModule } from '@angular/common';
 import { ResultsComponent } from './results/results.component';
 import { CategoryResultsComponent } from './category-results/category-results.component';
+import { RecipeViewComponent } from './recipe-view/recipe-view.component';
+import { from } from 'rxjs';
 
 const routes: Routes = [
   {
@@ -37,6 +39,10 @@ const routes: Routes = [
   {
     path: 'categoryResults',
     component: CategoryResultsComponent,
+  },
+  {
+    path: 'recipeView',
+    component: RecipeViewComponent,
   },
   { path: '', redirectTo: '/explore', pathMatch: 'full' },
 ];

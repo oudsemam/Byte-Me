@@ -1,1 +1,7 @@
-<p>recipe-view works!</p>
+<div>
+  <fa-icon [icon]="faClock"></fa-icon>
+  <app-recipe-card-time
+    *ngFor="let time of recipeTiming"
+    [time]="time"
+  ></app-recipe-card-time>
+</div>

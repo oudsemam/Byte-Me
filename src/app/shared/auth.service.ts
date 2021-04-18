@@ -36,10 +36,10 @@ export class AuthService {
     return this.afAuth
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
+        this.SetUserData(result.user);
         this.ngZone.run(() => {
           this.router.navigate(['dashboard']);
         });
-        this.SetUserData(result.user);
       })
       .catch((error) => {
         window.alert(error.message);
@@ -83,7 +83,7 @@ export class AuthService {
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
-    return user !== null && user.emailVerified !== false ? true : false;
+    return user !== null ? true : false;
   }
 
   // // Sign in with Google
@@ -113,14 +113,15 @@ export class AuthService {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
       `users/${user.uid}`
     );
-    const userData: User = {
+    this.userData = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
     };
-    return userRef.set(userData, {
+    localStorage.setItem('user',JSON.stringify(this.userData));
+    return userRef.set(this.userData, {
       merge: true,
     });
   }

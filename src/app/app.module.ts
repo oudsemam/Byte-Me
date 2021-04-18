@@ -44,7 +44,8 @@ import { ForgotPasswordComponent } from './FireBase/forgot-password/forgot-passw
 import { VerifyEmailComponent } from './FireBase/verify-email/verify-email.component';
 
 //Auth service
-import { AuthService } from './shared/auth.service'
+import { AuthService } from './shared/auth.service';
+
 
 
 @NgModule({

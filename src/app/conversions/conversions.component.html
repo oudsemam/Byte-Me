@@ -1,1 +1,15 @@
-<p>conversions works!</p>
+<div>
+    <input [(ngModel)]= 'value'>
+    <label>Convert From:</label>
+    <select [(ngModel)]= 'selectedFrom'>
+        <option [value]='item.abbr' *ngFor= 'let item of convertFrom'>{{ item.singular }}</option>
+    </select>
+</div>
+<div>
+    <label>Convert to:</label>
+    <select [(ngModel)]= 'selectedTo'>
+        <option [value]='item.abbr' *ngFor = 'let item of convertTo'>{{ item.singular }}</option>
+    </select>
+</div>
+<button (click)='onClick()'>Convert</button>
+<div>{{output}}</div>

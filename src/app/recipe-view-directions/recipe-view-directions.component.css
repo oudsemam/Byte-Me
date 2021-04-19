@@ -1,0 +1,10 @@
+.direction-item {
+  display: flex;
+  align-items: center;
+}
+
+.direction-index {
+  margin: 1px 5px 1px 1px;
+  background-color: lightgray;
+  padding: 2px;
+}

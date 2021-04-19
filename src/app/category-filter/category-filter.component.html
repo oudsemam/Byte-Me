@@ -1,5 +1,7 @@
 <!-- Container for whole element -->
-<div class="category-parent">
-  <fa-icon [icon]="faCheese"></fa-icon>
-  <p class="category-name">{{ category.name }}</p>
-</div>
+<a routerLink="/categoryResults">
+  <div class="category-parent">
+    <fa-icon [icon]="category.icon"></fa-icon>
+    <p class="category-name">{{ category.name }}</p>
+  </div></a
+>

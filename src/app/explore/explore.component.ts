@@ -63,27 +63,27 @@ export class ExploreComponent implements OnInit {
 
   categoryFilter: CategoryFilter[] = [
     {
-      icon: 'faLemon',
+      icon: faLemon,
       name: 'Drinks',
     },
     {
-      icon: 'faDrumstickBite',
+      icon: faDrumstickBite,
       name: 'Lunch',
     },
     {
-      icon: 'faIceCream',
+      icon: faIceCream,
       name: 'Desserts',
     },
     {
-      icon: 'faAppleAlt',
+      icon: faAppleAlt,
       name: 'Snacks',
     },
     {
-      icon: 'faBacon',
+      icon: faBacon,
       name: 'Breakfast',
     },
     {
-      icon: 'faCheese',
+      icon: faCheese,
       name: 'Appetizers',
     },
   ];

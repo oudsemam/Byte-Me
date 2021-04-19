@@ -1,1 +1,51 @@
-<p>recipe-view works!</p>
+<!-- Container for top recipe card section -->
+<div class="recipe-top-container">
+  <app-recipe-card-result
+    *ngFor="let result of sampleResults"
+    [result]="result"
+  ></app-recipe-card-result>
+
+  <!-- Container for entire time componenet -->
+  <div class="recipe-time-parent">
+    <!-- clock icon -->
+    <fa-icon [icon]="faClock"></fa-icon>
+    <!-- container for values -->
+    <div class="recipe-time-child">
+      <app-recipe-card-time
+        *ngFor="let time of recipeTiming"
+        [time]="time"
+      ></app-recipe-card-time>
+    </div>
+  </div>
+
+  <!-- Container for entire servings componenet -->
+  <div class="servings-parent">
+    <app-recipe-card-servings></app-recipe-card-servings>
+  </div>
+</div>
+
+<!-- Container for button/tabs -->
+<div class="button-container">
+  <button type="button" name="ingredients" id="ingredients">Ingredients</button>
+  <button type="button" name="directions" id="directions">Directions</button>
+  <button type="button" name="notes" id="notes">Notes</button>
+</div>
+
+<!-- Container for bottom ingredients/directions/notes section -->
+<!-- Container for ingredients section -->
+<div class="ingredient-parent">
+  <app-recipe-view-ingredients
+    *ngFor="let ingredient of sampleIngredientList"
+    [ingredient]="ingredient"
+  ></app-recipe-view-ingredients>
+</div>
+<!-- Container for directions section -->
+<div class="direction-parent">
+  <app-recipe-view-directions
+    *ngFor="let direction of sampleDirection; let i = index"
+    [direction]="direction"
+    [i]="i"
+  ></app-recipe-view-directions>
+</div>
+<!-- Notes container -->
+<app-recipe-view-notes></app-recipe-view-notes>

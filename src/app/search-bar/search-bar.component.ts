@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RecipiesService } from '../recipes.service';
+import { RecipesService } from '../recipes.service';
 
 import { FileDetector } from 'selenium-webdriver';
 
@@ -20,7 +20,7 @@ export class SearchBarComponent implements OnInit {
   catagory: string = '';
   cuisine: string = '';
 
-  constructor(private service: RecipiesService) {}
+  constructor(private service: RecipesService) {}
 
   ngOnInit(): void {}
 

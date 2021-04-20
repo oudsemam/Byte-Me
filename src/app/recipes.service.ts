@@ -6,7 +6,7 @@ import { RecursiveTemplateAstVisitor } from '@angular/compiler';
 @Injectable({
   providedIn: 'root'
 })
-export class RecipiesService {
+export class RecipesService {
 
   recipeList = []
 
@@ -30,6 +30,10 @@ export class RecipiesService {
   }
   addSearch(newRecipes){
     this.recipeList = newRecipes
+  }
+
+  getRecipeList(){
+    return this.recipeList
   }
 }
 

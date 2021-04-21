@@ -49,6 +49,7 @@ export class SearchBarComponent implements OnInit {
       }
       //Pushes response to an array on the service to be called by other components
       this.service.addSearch(resultList)
+      console.log(resultList, 'Results list showing')
     });
   }
 

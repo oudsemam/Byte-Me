@@ -21,6 +21,7 @@ export class ResultsComponent implements OnInit {
       favorite: true,
     },
   ];
+  result = null
 
   recipeList: any[] | null = null
 

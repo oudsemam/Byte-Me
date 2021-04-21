@@ -1,6 +1,7 @@
 <h1>Explore</h1>
 <app-search-bar></app-search-bar>
-<app-recipe-card-result
-  *ngFor="let result of sampleResults"
-  [result]="result"
-></app-recipe-card-result>
+<ul>
+  <li *ngFor="let result of recipeList" [result]="result">
+    <app-recipe-card-result></app-recipe-card-result>
+  </li>
+</ul>

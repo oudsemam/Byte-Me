@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RecipiesService } from '../recipes.service';
+import { RecipesService } from '../recipes.service';
 import { DietaryFilter } from '../dietary-filter';
 import { CategoryFilter } from '../category-filter';
 import { LocationFilter } from '../location-filter';
@@ -103,7 +103,7 @@ export class ExploreComponent implements OnInit {
     },
   ];
 
-  constructor(private service: RecipiesService) {}
+  constructor(private service: RecipesService) {}
 
   ngOnInit(): void {}
 

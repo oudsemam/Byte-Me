@@ -9,7 +9,7 @@ import { RecipeCardResult } from '../recipe-card-result';
 })
 export class RecipeCardResultComponent implements OnInit {
   @Input() recipeResults: RecipeCardResult | null = null;
-  @Input() result: RecipeCardResult | null = null;
+  @Input() result = null;
 
   faHeart = faHeart;
 

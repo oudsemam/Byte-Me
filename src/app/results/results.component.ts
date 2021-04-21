@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeCardResult } from '../recipe-card-result';
+import { RecipesService } from '../recipes.service';
 
 @Component({
   selector: 'app-results',
@@ -20,8 +21,13 @@ export class ResultsComponent implements OnInit {
       favorite: true,
     },
   ];
+  result = null
 
-  constructor() {}
+  recipeList: any[] | null = null
 
-  ngOnInit(): void {}
+  constructor(private service: RecipesService) {}
+
+  ngOnInit(): void {
+    this.recipeList = this.service.getRecipeList()
+  }
 }

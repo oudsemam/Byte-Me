@@ -20,20 +20,27 @@ export class ConversionsComponent implements OnInit {
   value;
   //The value outputed by the convert API
   output;
+  //larger type of conversions to simplify units for better UI interface
+  conversionType = ['length', 'area', 'mass', 'volume', 'temperature', 'pressure'];
+  convert;
 
   constructor() {
     //this is filtering for volume from the larger convert API
-    this.convertFrom = convert().list().filter((unit)=>unit.measure === 'volume')
-    this.convertTo = convert().list().filter((unit)=>unit.measure === 'volume')
+    this.convertFrom = convert().list().filter((unit) => unit.measure === JSON.stringify(this.convert));
+    this.convertTo = convert()
+      .list()
+      .filter((unit) => unit.measure === JSON.stringify(this.convert));
   }
 
   ngOnInit(): void {}
 
-
+  
   /**
    * This function when the button is clicked will convert the user's value and convert from to output using the users selected convertTo.
    */
-  onClick(){
-    this.output=convert(this.value).from(this.selectedFrom).to(this.selectedTo)
+  onClick() {
+    this.output = convert(this.value)
+      .from(this.selectedFrom)
+      .to(this.selectedTo);
   }
 }

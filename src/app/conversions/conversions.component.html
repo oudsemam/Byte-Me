@@ -1,12 +1,19 @@
+
 <div>
     <h2>Recipe Converter</h2>
+    <div>
+    <label>Type of conversion needed</label>
+    <select [(ngModel)]= 'conversionType'>
+        <option [value]='this.convert' *ngFor='let convert of conversionType'>{{ this.convert }}</option>
+    </select>
+    </div>
     <div>
         <label for="valuetoconvert">Value to convert:</label>
         <input type="number" step="any" min="0" name="valuetoconvert" required="required" [(ngModel)]= 'value'>
     </div>
     <label for="selectedFrom">Convert From:</label>
     <select [(ngModel)]= 'selectedFrom'>
-        <option [value]='item.abbr' *ngFor= 'let item of convertFrom'>{{ item.singular }}</option>
+        <option [value]='item.abbr' *ngFor= 'let item of convertFrom'>{{ item.singular }} ({{ item.abbr }})</option>
     </select>
 </div>
 <div>

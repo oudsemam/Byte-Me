@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as convert  from 'convert-units';
-import { until } from 'selenium-webdriver';
+
 
 @Component({
   selector: 'app-conversions',
@@ -20,20 +20,43 @@ export class ConversionsComponent implements OnInit {
   value;
   //The value outputed by the convert API
   output;
+  //array
+  conversionType = [
+    'length',
+    'area',
+    'mass',
+    'volume',
+    'temperature',
+    'pressure',
+  ];
+  //stores the value selected by the user
+  conversionTypeSelected;
 
-  constructor() {
-    //this is filtering for volume from the larger convert API
-    this.convertFrom = convert().list().filter((unit)=>unit.measure === 'volume')
-    this.convertTo = convert().list().filter((unit)=>unit.measure === 'volume')
-  }
+  constructor() {}
 
   ngOnInit(): void {}
 
 
   /**
+   * This function populates the other two drop down menus based on the over arching type of conversion the user would like to do.
+   * @param conversionType conversion type selected from array
+   */
+  onSelect(conversionType) {
+        //this is filtering for volume from the larger convert API
+        this.convertFrom = convert()
+          .list()
+          .filter((unit) => unit.measure === conversionType);
+        this.convertTo = convert()
+          .list()
+    .filter((unit) => unit.measure === conversionType);
+  }
+
+  /**
    * This function when the button is clicked will convert the user's value and convert from to output using the users selected convertTo.
    */
-  onClick(){
-    this.output=convert(this.value).from(this.selectedFrom).to(this.selectedTo)
+  onClick() {
+    this.output = convert(this.value)
+      .from(this.selectedFrom)
+      .to(this.selectedTo);
   }
 }

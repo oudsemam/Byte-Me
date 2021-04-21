@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RecipiesService } from '../recipes.service';
+import { RecipesService } from '../recipes.service';
 
 import { FileDetector } from 'selenium-webdriver';
 
@@ -10,7 +10,6 @@ import { FileDetector } from 'selenium-webdriver';
   styleUrls: ['./search-bar.component.css'],
 })
 export class SearchBarComponent implements OnInit {
-  recipes: Observable<any> | null = null;
   searchText: string = '';
 
   vegan: boolean = false;
@@ -21,7 +20,7 @@ export class SearchBarComponent implements OnInit {
   catagory: string = '';
   cuisine: string = '';
 
-  constructor(private service: RecipiesService) {}
+  constructor(private service: RecipesService) {}
 
   ngOnInit(): void {}
 
@@ -43,11 +42,16 @@ export class SearchBarComponent implements OnInit {
       healthfilters.push('keto-friendly');
     }
 
-    this.recipes = this.service.searchRecipies(
-      this.searchText,
-      healthfilters,
-      this.catagory,
-      this.cuisine
-    );
+    this.service.searchRecipes(this.searchText,healthfilters,this.catagory,this.cuisine).subscribe((response) =>{
+      let resultList = []
+      for(let recipe of response.hits){
+        resultList.push(recipe)
+      }
+      //Pushes response to an array on the service to be called by other components
+      this.service.addSearch(resultList)
+      console.log(resultList, 'Results list showing')
+    });
   }
+
+
 }

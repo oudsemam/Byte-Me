@@ -3,8 +3,8 @@
     <h2>Recipe Converter</h2>
     <div>
     <label>Type of conversion needed</label>
-    <select [(ngModel)]= 'conversionType'>
-        <option [value]='this.convert' *ngFor='let convert of conversionType'>{{ this.convert }}</option>
+    <select (change)="onSelect($event.target.value)" [(ngModel)]= 'conversionTypeSelected' >
+        <option [value]='this.convert' *ngFor='let convert of conversionType' >{{ this.convert }}</option>
     </select>
     </div>
     <div>

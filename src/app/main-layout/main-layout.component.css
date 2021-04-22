@@ -26,10 +26,6 @@
   color: #4d434b;
 }
 
-.nav-icon :hover {
-  color: green;
-}
-
 .top-container {
   display: flex;
   justify-content: space-between;

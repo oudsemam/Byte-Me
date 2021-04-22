@@ -61,6 +61,18 @@ export class ExploreComponent implements OnInit {
 
   categoryFilter: CategoryFilter[] = [
     {
+      icon: faCheese,
+      name: 'Appetizers',
+    },
+    {
+      icon: faBacon,
+      name: 'Breakfast',
+    },
+    {
+      icon: faIceCream,
+      name: 'Desserts',
+    },
+    {
       icon: faLemon,
       name: 'Drinks',
     },
@@ -68,21 +80,10 @@ export class ExploreComponent implements OnInit {
       icon: faDrumstickBite,
       name: 'Lunch',
     },
-    {
-      icon: faIceCream,
-      name: 'Desserts',
-    },
+
     {
       icon: faAppleAlt,
       name: 'Snacks',
-    },
-    {
-      icon: faBacon,
-      name: 'Breakfast',
-    },
-    {
-      icon: faCheese,
-      name: 'Appetizers',
     },
   ];
 

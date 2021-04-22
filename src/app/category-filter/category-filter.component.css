@@ -11,3 +11,38 @@
   margin-bottom: 15px;
   border-radius: 8px;
 }
+
+.category-name {
+  font-weight: 500;
+  font-size: 22px;
+}
+
+#Appetizers {
+  background: url("src/assets/Appetizer.png");
+  background-size: 150px;
+}
+
+#Breakfast {
+  background: url("src/assets/Breakfast.png");
+  background-size: 150px;
+}
+
+#Desserts {
+  background: url("src/assets/Desserts.png");
+  background-size: 150px;
+}
+
+#Drinks {
+  background: url("src/assets/Drinks.png");
+  background-size: 150px;
+}
+
+#Lunch {
+  background: url("src/assets/Lunch.png");
+  background-size: 150px;
+}
+
+#Snacks {
+  background: url("src/assets/Snacks.png");
+  background-size: 150px;
+}

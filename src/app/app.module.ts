@@ -48,6 +48,11 @@ import { AuthService } from './shared/auth.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
 
+
+//Sentry service
+import { APP_INITIALIZER, ErrorHandler } from "@angular/core";
+import { Router } from "@angular/router";
+import * as Sentry from "@sentry/angular";
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,7 +103,22 @@ import { MatTabsModule } from '@angular/material/tabs';
     FontAwesomeModule,
     MatTabsModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService,{
+    provide: ErrorHandler,
+    useValue: Sentry.createErrorHandler({
+      showDialog: true,
+    }),
+  },
+  {
+    provide: Sentry.TraceService,
+    deps: [Router],
+  },
+  {
+    provide: APP_INITIALIZER,
+    useFactory: () => () => {},
+    deps: [Sentry.TraceService],
+    multi: true,
+  },],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

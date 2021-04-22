@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { RecipeCardResult } from '../recipe-card-result';
 import { RecipesService } from '../recipes.service';
 
@@ -7,7 +8,7 @@ import { RecipesService } from '../recipes.service';
   templateUrl: './category-results.component.html',
   styleUrls: ['./category-results.component.css'],
 })
-export class CategoryResultsComponent implements OnInit {
+export class CategoryResultsComponent implements OnInit, OnDestroy {
   @Input() sampleResults: RecipeCardResult[] = [
     {
       glutenFree: true,
@@ -30,10 +31,13 @@ export class CategoryResultsComponent implements OnInit {
   keto: boolean = false;
   catagory: string = '';
   cuisine: string = '';
-
+  subscription: Subscription
   constructor(private service: RecipesService) {}
 
   ngOnInit(): void {}
+  ngOnDestroy(){
+    this.subscription.unsubscribe
+  }
 
   search() {
     let healthfilters: string[] = [];
@@ -53,7 +57,7 @@ export class CategoryResultsComponent implements OnInit {
       healthfilters.push('keto-friendly');
     }
 
-    this.service.searchRecipes(this.searchText,healthfilters,this.catagory,this.cuisine).subscribe((response) =>{
+    this.subscription = this.service.searchRecipes(this.searchText,healthfilters,this.catagory,this.cuisine).subscribe((response) =>{
       let resultList = []
       for(let recipe of response.hits){
         resultList.push(recipe)

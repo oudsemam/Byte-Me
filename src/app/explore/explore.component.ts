@@ -20,7 +20,6 @@ import { FileDetector } from 'selenium-webdriver';
   styleUrls: ['./explore.component.css'],
 })
 export class ExploreComponent implements OnInit {
-
   recipes: Observable<any> | null = null;
   searchText: string = '';
   faCheese = faCheese;
@@ -29,14 +28,13 @@ export class ExploreComponent implements OnInit {
   faIceCream = faIceCream;
   faAppleAlt = faAppleAlt;
   faBacon = faBacon;
-  vegan: boolean = false
-  vegatarian: boolean = false
-  glutenFree: boolean = false
-  dairyFree: boolean = false
-  keto: boolean = false
-  catagory: string = ""
-  cuisine: string = ""
-
+  vegan: boolean = false;
+  vegatarian: boolean = false;
+  glutenFree: boolean = false;
+  dairyFree: boolean = false;
+  keto: boolean = false;
+  catagory: string = '';
+  cuisine: string = '';
 
   dietFilters: DietaryFilter[] = [
     {
@@ -90,16 +88,58 @@ export class ExploreComponent implements OnInit {
 
   locationFilter: LocationFilter[] = [
     {
+      location: 'American',
+    },
+    {
+      location: 'Asian',
+    },
+    {
+      location: 'British',
+    },
+    {
+      location: 'Caribbean',
+    },
+    {
+      location: 'Central Europe',
+    },
+    {
+      location: 'Chinese',
+    },
+    {
+      location: 'Eastern Europe',
+    },
+    {
+      location: 'French',
+    },
+    {
       location: 'Indian',
     },
     {
       location: 'Italian',
     },
     {
-      location: 'Asian',
+      location: 'Japanese',
+    },
+    {
+      location: 'Kosher',
+    },
+    {
+      location: 'Mediterranean',
     },
     {
       location: 'Mexican',
+    },
+    {
+      location: 'Middle Eastern',
+    },
+    {
+      location: 'Nordic',
+    },
+    {
+      location: 'South American',
+    },
+    {
+      location: 'South East Asian',
     },
   ];
 
@@ -107,26 +147,29 @@ export class ExploreComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  search() {
+    let healthfilters: string[] = [];
+    if (this.vegan) {
+      healthfilters.push('vegan');
+    }
+    if (this.vegatarian) {
+      healthfilters.push('vegatarian');
+    }
+    if (this.glutenFree) {
+      healthfilters.push('gluten-free');
+    }
+    if (this.dairyFree) {
+      healthfilters.push('dairy-free');
+    }
+    if (this.keto) {
+      healthfilters.push('keto-friendly');
+    }
 
-  search(){
-    let healthfilters: string[] = []
-    if (this.vegan){
-      healthfilters.push('vegan')
-    }
-    if (this.vegatarian){
-      healthfilters.push('vegatarian')
-    }
-    if (this.glutenFree){
-      healthfilters.push('gluten-free')
-    }
-    if (this.dairyFree){
-      healthfilters.push('dairy-free')
-    }
-    if (this.keto){
-      healthfilters.push('keto-friendly')
-    }
-    
-    this.recipes = this.service.searchRecipes(this.searchText, healthfilters, this.catagory, this.cuisine)
-   
+    this.recipes = this.service.searchRecipes(
+      this.searchText,
+      healthfilters,
+      this.catagory,
+      this.cuisine
+    );
   }
 }

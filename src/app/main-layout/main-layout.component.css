@@ -1,12 +1,33 @@
 .byteMe-logo {
   width: 120px;
 }
+.log-out {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 5px;
+  border-radius: 5px;
+  background-color: white;
+  border: 2px solid #4d434b;
+  color: #4d434b;
+}
 .icon-nav {
   position: fixed;
   bottom: 0;
   width: 100vw;
   display: flex;
+  align-items: center;
   justify-content: space-around;
+  padding: 15px 0 10px 0;
+  background-color: white;
+  border-top: 1px solid #cecece;
+}
+
+.nav-icon {
+  color: #4d434b;
+}
+
+.nav-icon :hover {
+  color: green;
 }
 
 .top-container {

@@ -21,31 +21,33 @@ import { VerifyEmailComponent } from '../app/FireBase/verify-email/verify-email.
 
 const routes: Routes = [
   //Sign in routes
-  { 
-    path: '', redirectTo: '/sign-in', pathMatch: 'full' 
+  {
+    path: '',
+    redirectTo: '/sign-in',
+    pathMatch: 'full',
   },
-  { 
-    path: 'sign-in', 
-    component: SignInComponent 
+  {
+    path: 'sign-in',
+    component: SignInComponent,
   },
-  { 
-    path: 'register-user', 
-    component: SignUpComponent 
+  {
+    path: 'register-user',
+    component: SignUpComponent,
   },
-  { 
-    path: 'dashboard', 
+  {
+    path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [AuthGuard], 
+    canActivate: [AuthGuard],
   },
-  { 
-    path: 'forgot-password', 
-    component: ForgotPasswordComponent 
+  {
+    path: 'forgot-password',
+    component: ForgotPasswordComponent,
   },
-  { 
-    path: 'verify-email-address', 
-    component: VerifyEmailComponent 
+  {
+    path: 'verify-email-address',
+    component: VerifyEmailComponent,
   },
-  
+
   //other major components routes
   {
     path: 'explore',
@@ -54,10 +56,6 @@ const routes: Routes = [
   {
     path: 'results',
     component: ResultsComponent,
-  },
-  {
-    path: 'favorites',
-    component: FavoritesComponent,
   },
   {
     path: 'recipeBook',
@@ -81,7 +79,6 @@ const routes: Routes = [
     component: RecipeViewComponent,
   },
   { path: '', redirectTo: '/explore', pathMatch: 'full' },
-
 ];
 
 @NgModule({

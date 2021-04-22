@@ -9,13 +9,39 @@
 
 .category-filter-parent {
   display: flex;
+  flex-direction: column;
   background-color: #e7e7e7;
-  padding: 10px 0;
+  padding: 10px 20px;
 }
 
 .location-filter-parent {
   display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
 }
 .location-filter-parent h2 {
   display: block;
+}
+
+.wrap-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.scroll-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.explore-h2 {
+  padding: 10px 0;
+}
+
+#edamam-badge {
+  padding: 15px;
+}
+
+.spacer {
+  height: 50px;
 }

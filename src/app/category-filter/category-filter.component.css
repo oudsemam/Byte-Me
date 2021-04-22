@@ -2,7 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: white;
-  border: 1px solid black;
+  justify-content: center;
+  background-color: #4d434b;
+  color: white;
   padding: 10px;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 15px;
+  border-radius: 8px;
 }

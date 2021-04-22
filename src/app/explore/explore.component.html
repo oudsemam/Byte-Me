@@ -13,22 +13,29 @@
 
 <!-- Parent container for filtering by meal-type -->
 <div class="category-filter-parent">
-  <h2>Category</h2>
-  <app-category-filter
-    *ngFor="let category of categoryFilter"
-    [category]="category"
-  ></app-category-filter>
+  <h2 class="explore-h2">Category</h2>
+  <div class="wrap-container">
+    <app-category-filter
+      *ngFor="let category of categoryFilter"
+      [category]="category"
+    ></app-category-filter>
+  </div>
 </div>
 
 <!-- Parent container for filtering by location -->
 <div class="location-filter-parent">
-  <h2>Inpired Cuisine</h2>
-  <app-location-filter
-    *ngFor="let location of locationFilter"
-    [location]="location"
-  ></app-location-filter>
+  <h2 class="explore-h2">Inpired Cuisine</h2>
+  <div class="scroll-container">
+    <app-location-filter
+      *ngFor="let location of locationFilter"
+      [location]="location"
+    ></app-location-filter>
+  </div>
 </div>
 
+<!-- This is the "Powered By Edamam API badge, it will be moved later, but we must include it" -->
+<div id="edamam-badge" data-color="white"></div>
+<div class="spacer"></div>
 <!-- Keeping for reference. Will remove later. 
     <ul>
   <li *ngFor="let recipe of (recipes | async)?.hits">

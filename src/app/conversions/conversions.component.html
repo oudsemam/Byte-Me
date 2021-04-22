@@ -1,15 +1,110 @@
+
 <div>
-    <input [(ngModel)]= 'value'>
-    <label>Convert From:</label>
+    <h2>Recipe Converter</h2>
+    <div>
+    <label>Type of conversion needed</label>
+    <select (change)="onSelect($event.target.value)" [(ngModel)]= 'conversionTypeSelected' >
+        <option [value]='this.convert' *ngFor='let convert of conversionType' >{{ this.convert }}</option>
+    </select>
+    </div>
+    <div>
+        <label for="valuetoconvert">Value to convert:</label>
+        <input type="number" step="any" min="0" name="valuetoconvert" required="required" [(ngModel)]= 'value'>
+    </div>
+    <label for="selectedFrom">Convert From:</label>
     <select [(ngModel)]= 'selectedFrom'>
-        <option [value]='item.abbr' *ngFor= 'let item of convertFrom'>{{ item.singular }}</option>
+        <option [value]='item.abbr' *ngFor= 'let item of convertFrom'>{{ item.singular }} ({{ item.abbr }})</option>
     </select>
 </div>
 <div>
-    <label>Convert to:</label>
+    <label for="selectedTo">Convert to:</label>
     <select [(ngModel)]= 'selectedTo'>
         <option [value]='item.abbr' *ngFor = 'let item of convertTo'>{{ item.singular }}</option>
     </select>
 </div>
 <button (click)='onClick()'>Convert</button>
 <div>{{output}}</div>
+
+<div>
+    <h2>Oven Temperatures</h2>
+    <table>
+        <tr>
+            <th>Gas Mark</th>
+            <th>Fahrenheit</th>
+            <th>Celsius</th>
+            <th>Heat Description</th>
+        </tr>
+        <tr>
+            <td>1/4</td>
+            <td>225 °F</td>
+            <td>110 °C</td>
+            <td>Very slow</td>
+        </tr>
+        <tr>
+            <td>1/2</td>
+            <td>250 °F</td>
+            <td>120 °C</td>
+            <td>--</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>275 °F</td>
+            <td>135 °C</td>
+            <td>Slow</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>300 °F</td>
+            <td>150 °C</td>
+            <td>--</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>325 °F</td>
+            <td>165 °C</td>
+            <td>Moderately Slow</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>350 °F</td>
+            <td>180 °C</td>
+            <td>Moderate</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>375 °F</td>
+            <td>190 °C</td>
+            <td>--</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>400 °F</td>
+            <td>205 °C</td>
+            <td>Moderately Hot</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>425 °F</td>
+            <td>220 °C</td>
+            <td>Hot</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>450 °F</td>
+            <td>230 °C</td>
+            <td>--</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>475 °F</td>
+            <td>245 °C</td>
+            <td>Very Hot</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>500 °F</td>
+            <td>260 °C</td>
+            <td>Extremely Hot</td>
+        </tr>
+    </table>
+</div>

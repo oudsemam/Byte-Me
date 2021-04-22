@@ -17,7 +17,7 @@
       </div>
       <!-- Value To Convert -->
       <div class="conversion-input">
-        <label for="valuetoconvert">Value to Convert:</label>
+        <label for="valuetoconvert">Value to Convert</label>
         <input
           type="number"
           step="any"
@@ -29,7 +29,7 @@
       </div>
       <!-- Convert From -->
       <div class="conversion-input">
-        <label for="selectedFrom">Convert From:</label>
+        <label for="selectedFrom">Convert From</label>
         <select [(ngModel)]="selectedFrom">
           <option [value]="item.abbr" *ngFor="let item of convertFrom">
             {{ item.singular }} ({{ item.abbr }})
@@ -38,20 +38,27 @@
       </div>
       <!-- Convert To -->
       <div class="conversion-input">
-        <label for="selectedTo">Convert To:</label>
+        <label for="selectedTo">Convert To</label>
         <select [(ngModel)]="selectedTo">
           <option [value]="item.abbr" *ngFor="let item of convertTo">
             {{ item.singular }}
           </option>
         </select>
       </div>
+      <!-- Convert Button -->
       <button class="convert-button" (click)="onClick()">Convert</button>
-      <div>{{ output }}</div>
+      <!-- Answer -->
+      <div class="answer-container">
+        <p class="answer-label">Result</p>
+        <div class="answer">
+          <p class="output">{{ output }}</p>
+        </div>
+      </div>
     </div>
   </div>
 
   <!-- Oven Temperatures -->
-  <div>
+  <div class="oven-temperatures">
     <h2>Oven Temperatures</h2>
     <table>
       <tr>

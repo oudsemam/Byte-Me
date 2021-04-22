@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { RecipeCardResult } from '../recipe-card-result';
 import { RecipesService } from '../recipes.service';
 
@@ -7,7 +7,7 @@ import { RecipesService } from '../recipes.service';
   templateUrl: './results.component.html',
   styleUrls: ['./results.component.css'],
 })
-export class ResultsComponent implements OnInit {
+export class ResultsComponent implements OnInit, OnChanges{
   sampleResults: RecipeCardResult[] = [
     {
       glutenFree: true,
@@ -28,6 +28,11 @@ export class ResultsComponent implements OnInit {
   constructor(private service: RecipesService) {}
 
   ngOnInit(): void {
+    this.recipeList = this.service.getRecipeList()
+  }
+
+  ngOnChanges(changes){
+    if(changes['recipeList'])
     this.recipeList = this.service.getRecipeList()
   }
 }

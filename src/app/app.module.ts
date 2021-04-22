@@ -53,6 +53,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { APP_INITIALIZER, ErrorHandler } from "@angular/core";
 import { Router } from "@angular/router";
 import * as Sentry from "@sentry/angular";
+import { SentryComponent } from './sentry/sentry.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,6 +87,7 @@ import * as Sentry from "@sentry/angular";
     RecipeViewIngredientsComponent,
     RecipeViewDirectionsComponent,
     RecipeViewNotesComponent,
+    SentryComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,17 @@
 <div class="notes-container">
   <textarea
+    [(ngModel)]="newNote"
     aria-label="Notes"
     type="text"
     id="notes"
     name="notes"
     placeholder="Take a note..."
   ></textarea>
+  <div class="notes-area">
+    <div *ngFor="let note of addedNotes" [note]="note" class="newNote">
+      <p>{{ note }}</p>
+      <button (click)="removeNote()">remove</button>
+    </div>
+  </div>
+  <button (click)="addNote()">Add</button>
 </div>

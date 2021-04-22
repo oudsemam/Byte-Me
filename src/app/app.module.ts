@@ -45,8 +45,8 @@ import { VerifyEmailComponent } from './FireBase/verify-email/verify-email.compo
 
 //Auth service
 import { AuthService } from './shared/auth.service';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -92,10 +92,11 @@ import { AuthService } from './shared/auth.service';
     AngularFirestoreModule, // Only required for database features
     AngularFireAuthModule, // Only required for auth features,
     AngularFireStorageModule, // Only required for storage features
-
+    BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
+    MatTabsModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

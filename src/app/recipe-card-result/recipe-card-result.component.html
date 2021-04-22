@@ -1,11 +1,18 @@
-<a routerLink="/recipeView">
+<div routerLink="/recipeView">
   <div class="recipe-card-result">
     <!-- Will have to update image from API -->
-    <img src="{{ result.recipe.image }}" alt="{{ result.recipe.label }}" />
-    <h3>{{ result.recipe.label }}</h3>
-    <p class="recipe-card-minutes">{{ result.recipe.totalTime }}</p>
-    <p class="recipe-card-type">{{ result.recipe.dishType }}</p>
-    <!-- WIll have to update to link to boolean -->
-    <fa-icon [icon]="faHeart"></fa-icon>
+    <img
+      class="recipe-card-result-image"
+      src="{{ result.recipe.image }}"
+      alt="{{ result.recipe.label }}"
+    />
+    <div class="recipe-card-top-info">
+      <h3>{{ result.recipe.label }}</h3>
+      <div class="recipe-card-bottom-info">
+        <p class="recipe-card-type">{{ result.recipe.dishType }}</p>
+        <!-- WIll have to update to link to boolean -->
+        <fa-icon [icon]="faHeart"></fa-icon>
+      </div>
+    </div>
   </div>
-</a>
+</div>

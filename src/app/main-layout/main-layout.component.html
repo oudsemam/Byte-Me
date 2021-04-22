@@ -1,32 +1,29 @@
 <header class="nav-parent">
-  <div class="byteMe-logo">
-    <img src="assets/byte-me-logo.svg" alt="Byte Me logo" />
+  <div class="top-container">
+    <div class="byteMe-logo">
+      <img src="assets/byte-me-logo.svg" alt="Byte Me logo" />
+    </div>
+    <button class="log-out" (click)="authService.SignOut()">Log Out</button>
   </div>
   <!-- This navigation will be fixed on mobile, but will appear in top right using flexbox on desktop -->
   <nav class="icon-nav">
     <!-- Explore -->
     <a routerLink="/explore" aria-label="Explore recipes"
-      ><i class="far fa-compass fa-lg"></i
-    ></a>
-    <!-- Favorites -->
-    <a routerLink="/favorites" aria-label="View favorited recipes"
-      ><i class="far fa-heart fa-lg"></i
+      ><fa-icon [icon]="faCompass" size="lg" class="nav-icon"></fa-icon
     ></a>
     <!-- Recipe Book -->
     <a routerLink="/recipeBook" aria-label="View saved recipe book"
-      ><i class="fas fa-book fa-lg"></i
+      ><fa-icon [icon]="faBook" size="lg" class="nav-icon"></fa-icon
     ></a>
     <!-- Calculator -->
     <a routerLink="/conversions" aria-label="Calculate conversions"
-      ><i class="fas fa-calculator fa-lg"></i
+      ><fa-icon [icon]="faCalculator" size="lg" class="nav-icon"></fa-icon
     ></a>
     <!-- Shopping List -->
     <a routerLink="/shoppingList" aria-label="View shopping list"
-      ><i class="far fa-list-alt fa-lg"></i
+      ><fa-icon [icon]="faList" size="lg" class="nav-icon"></fa-icon
     ></a>
   </nav>
 </header>
 
 <router-outlet></router-outlet>
-<!-- This is the "Powered By Edamam API badge, it will be moved later, but we must include it" -->
-<div id="edamam-badge" data-color="white"></div>

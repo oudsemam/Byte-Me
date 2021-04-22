@@ -1,7 +1,13 @@
-<h1>Explore</h1>
-<app-search-bar></app-search-bar>
+<div class="explore-top">
+  <h1>Explore</h1>
+  <app-search-bar></app-search-bar>
+</div>
+
 <ul>
-  <li *ngFor="let result of recipeList">
-    <app-recipe-card-result [result]="result"></app-recipe-card-result>
-  </li>
+  <div class="recipe-card-container">
+    <li *ngFor="let result of recipeList">
+      <app-recipe-card-result [result]="result"></app-recipe-card-result>
+    </li>
+  </div>
+  <div class="spacer"></div>
 </ul>

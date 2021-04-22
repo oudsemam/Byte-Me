@@ -1,5 +1,10 @@
+.explore-top {
+  padding: 5px 15px;
+}
 .diet-filter-parent {
   display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
 }
 
 .category-filter-parent {

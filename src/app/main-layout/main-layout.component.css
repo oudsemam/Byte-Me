@@ -1,5 +1,5 @@
 .byteMe-logo {
-  width: 200px;
+  width: 120px;
 }
 .icon-nav {
   position: fixed;
@@ -7,6 +7,12 @@
   width: 100vw;
   display: flex;
   justify-content: space-around;
+}
+
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
 }
 
 /* This is where the layout will break from mobile to Desktop */

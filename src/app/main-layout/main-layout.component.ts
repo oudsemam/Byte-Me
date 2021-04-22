@@ -5,6 +5,7 @@ import {
   faCompass,
   faList,
 } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from '../shared/auth.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -17,7 +18,7 @@ export class MainLayoutComponent implements OnInit {
   faCalculator = faCalculator;
   faList = faList;
 
-  constructor() {}
+  constructor(public authService: AuthService) {}
 
   ngOnInit(): void {}
 }

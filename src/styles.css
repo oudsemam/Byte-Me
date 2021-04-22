@@ -12,8 +12,26 @@ body {
 h1,
 h2,
 h3 {
-  font-family: "Red Hat Text", sans-serif;
+  font-family: "Zilla Slab", serif;
 }
 body {
+  font-family: "Red Hat Text", sans-serif;
+}
+
+.mat-typography h1,
+.mat-typography h2,
+.mat-typography h3 {
   font-family: "Zilla Slab", serif;
+}
+
+.mat-typography p,
+.mat-body,
+.mat-body-1 {
+  font-family: "Red Hat Text", sans-serif;
+}
+
+.mat-body p,
+.mat-body-1 p,
+.mat-typography p {
+  margin: 0;
 }

@@ -30,6 +30,9 @@ import { RecipeViewIngredientsComponent } from './recipe-view-ingredients/recipe
 import { RecipeViewDirectionsComponent } from './recipe-view-directions/recipe-view-directions.component';
 import { RecipeViewNotesComponent } from './recipe-view-notes/recipe-view-notes.component';
 
+//local storage
+import { StorageServiceModule } from 'ngx-webstorage-service';
+
 // Firebase
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -45,6 +48,7 @@ import { VerifyEmailComponent } from './FireBase/verify-email/verify-email.compo
 //Auth service
 import { AuthService } from './shared/auth.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
@@ -95,6 +99,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     FormsModule,
     FontAwesomeModule,
     MatTabsModule,
+    StorageServiceModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

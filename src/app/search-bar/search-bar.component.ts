@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RecipesService } from '../recipes.service';
-
 import { FileDetector } from 'selenium-webdriver';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-bar',
@@ -20,7 +20,7 @@ export class SearchBarComponent implements OnInit {
   catagory: string = '';
   cuisine: string = '';
 
-  constructor(private service: RecipesService) {}
+  constructor(private service: RecipesService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -50,7 +50,9 @@ export class SearchBarComponent implements OnInit {
       //Pushes response to an array on the service to be called by other components
       this.service.addSearch(resultList)
       console.log(resultList, 'Results list showing')
+      this.router.navigate(['/results'])
     });
+
   }
 
 

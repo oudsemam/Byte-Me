@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { RecipeCardResult } from '../recipe-card-result';
 import { RecipesService } from '../recipes.service';
 
@@ -7,7 +8,7 @@ import { RecipesService } from '../recipes.service';
   templateUrl: './category-results.component.html',
   styleUrls: ['./category-results.component.css'],
 })
-export class CategoryResultsComponent implements OnInit {
+export class CategoryResultsComponent implements OnInit, OnDestroy {
   @Input() sampleResults: RecipeCardResult[] = [
     {
       glutenFree: true,
@@ -22,10 +23,10 @@ export class CategoryResultsComponent implements OnInit {
     },
   ];
 
-
   constructor(private service: RecipesService) {}
 
   ngOnInit(): void {}
+
 
   
 }

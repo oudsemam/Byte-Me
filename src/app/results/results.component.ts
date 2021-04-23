@@ -27,7 +27,7 @@ export class ResultsComponent implements OnInit, OnDestroy {
   recipeList: any[] | null = null
   subscription: Subscription;
 
-  constructor(private service: RecipesService) {}
+  constructor(private service: RecipesService) { }
 
   ngOnInit(): void {
     // this.recipeList = this.service.getRecipeList()

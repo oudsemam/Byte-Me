@@ -1,0 +1,51 @@
+.shopping-list-container h1 {
+  line-height: 0.9em;
+  padding-top: 10px;
+  padding: 10px 15px;
+}
+
+.shopping-list-text-area {
+  background-color: #f0f0f0;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.shopping-list-text-area textarea {
+  padding: 10px;
+  width: 100%;
+}
+
+.add-btn {
+  margin-top: 20px;
+  width: 100px;
+  border-radius: 5px;
+  color: white;
+  background-color: #5abf73;
+  border: none;
+  padding: 5px;
+}
+.added-items {
+  padding: 0px 15px 80px 15px;
+  margin: 10px 0px;
+}
+.newListItem {
+  min-height: 50px;
+  border: 1px solid #5abf73;
+  background-color: #e9f9ec;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.remove-btn {
+  border: none;
+  background-color: #e9f9ec;
+  padding: 0px 10px 0px 20px;
+}

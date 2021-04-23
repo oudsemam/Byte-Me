@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { RecipeCardResult } from '../recipe-card-result';
+import { RecipesService } from '../recipes.service';
 
 @Component({
   selector: 'app-recipe-card-result',
@@ -13,7 +14,9 @@ export class RecipeCardResultComponent implements OnInit {
 
   faHeart = faHeart;
 
-  constructor() {}
+  constructor(private service: RecipesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.service.addRecipe(this.result)
+  }
 }

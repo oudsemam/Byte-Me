@@ -2,43 +2,42 @@
 
 <!-- Container for top recipe card section -->
 <div class="recipe-top-container">
-  <app-recipe-card-result
-    *ngFor="let result of sampleResults"
-    [result]="result"
-  ></app-recipe-card-result>
+  <app-recipe-card-result [result]="recipe"></app-recipe-card-result>
 
   <!-- Container for entire time componenet -->
   <div class="recipe-time-parent">
     <!-- clock icon -->
     <fa-icon [icon]="faClock"></fa-icon>
     <!-- container for values -->
-    <div class="recipe-time-child">
+    <!-- <div class="recipe-time-child">
       <app-recipe-card-time
         *ngFor="let time of recipeTiming"
         [time]="time"
       ></app-recipe-card-time>
-    </div>
+    </div> -->
   </div>
 
   <!-- Container for entire servings componenet -->
   <div class="servings-parent">
-    <app-recipe-card-servings></app-recipe-card-servings>
+    <app-recipe-card-servings
+      [serving]="recipe.recipe.yield"
+    ></app-recipe-card-servings>
   </div>
 </div>
 
 <mat-tab-group>
   <mat-tab label="Ingredients">
     <app-recipe-view-ingredients
-      *ngFor="let ingredient of sampleIngredientList"
+      *ngFor="let ingredient of recipe.recipe.ingredientLines"
       [ingredient]="ingredient"
     ></app-recipe-view-ingredients>
   </mat-tab>
   <mat-tab label="Directions">
-    <app-recipe-view-directions
+    <!-- <app-recipe-view-directions
       *ngFor="let direction of sampleDirection; let i = index"
       [direction]="direction"
       [i]="i"
-    ></app-recipe-view-directions>
+    ></app-recipe-view-directions> -->
   </mat-tab>
   <mat-tab label="Notes">
     <app-recipe-view-notes></app-recipe-view-notes>

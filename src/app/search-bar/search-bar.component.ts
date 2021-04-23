@@ -33,7 +33,7 @@ export class SearchBarComponent implements OnInit, OnDestroy {
   
 
   search() {
-    throw new Error("Invalid Search")
+    
     let healthfilters: string[] = [];
     if (this.vegan) {
       healthfilters.push('vegan');

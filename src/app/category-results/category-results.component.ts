@@ -8,7 +8,7 @@ import { RecipesService } from '../recipes.service';
   templateUrl: './category-results.component.html',
   styleUrls: ['./category-results.component.css'],
 })
-export class CategoryResultsComponent implements OnInit, OnDestroy {
+export class CategoryResultsComponent implements OnInit {
   @Input() sampleResults: RecipeCardResult[] = [
     {
       glutenFree: true,

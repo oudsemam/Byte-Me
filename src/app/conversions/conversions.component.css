@@ -61,5 +61,29 @@
 }
 
 .oven-temperatures {
-  padding: 15px;
+  padding: 30px 15px 80px 15px;
+}
+table {
+  width: 100%;
+}
+table tr th {
+  line-height: 1em;
+  padding: 7px 15px 7px 5px;
+  border: 1px solid #5abf73;
+  background-color: #5abf73;
+  color: white;
+  font-weight: 500;
+}
+
+table tr td {
+  padding: 7px;
+  line-height: 1.2em;
+}
+
+table tr {
+  border: 1px solid #cecece;
+}
+
+table tr:nth-child(even) {
+  background-color: #f0f0f0;
 }

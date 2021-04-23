@@ -33,7 +33,7 @@ export class SearchBarComponent implements OnInit, OnDestroy {
   
 
   search() {
-    throw new Error("Invalid Search")
+    
     let healthfilters: string[] = [];
     if (this.vegan) {
       healthfilters.push('vegan');
@@ -58,7 +58,8 @@ export class SearchBarComponent implements OnInit, OnDestroy {
         resultList.push(recipe)
       }
       //Pushes response to an array on the service to be called by other components
-      this.service.addSearch(resultList)
+      // this.service.addSearch(resultList)
+      this.service.sendList(resultList)
       console.log(resultList, 'Results list showing')
       this.router.navigate(['/results'])
     });

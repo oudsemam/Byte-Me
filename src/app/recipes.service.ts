@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { RecursiveTemplateAstVisitor } from '@angular/compiler';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { RecursiveTemplateAstVisitor } from '@angular/compiler';
 export class RecipesService {
 
   recipeList = []
-
+  private subject = new Subject<any>()
   constructor(private http: HttpClient) { }
 
 
@@ -37,5 +37,16 @@ export class RecipesService {
     console.log('getting recipe list')
     return this.recipeList
   }
+
+  sendList(recipeList: any[]){
+    this.subject.next(recipeList)
+    console.log('sending list')
+  }
+
+  getList(): Observable<any>{
+    console.log('getting list')
+    return this.subject.asObservable()
+  }
+  
 }
 

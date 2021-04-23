@@ -30,8 +30,9 @@ export class ResultsComponent implements OnInit, OnDestroy {
   constructor(private service: RecipesService) { }
 
   ngOnInit(): void {
-    // this.recipeList = this.service.getRecipeList()
+    this.recipeList = this.service.getRecipeList()
     this.subscription = this.service.getList().subscribe(subject =>{
+     console.log('subject')
       if (subject){
         this.recipeList = subject
       }else{
@@ -40,11 +41,8 @@ export class ResultsComponent implements OnInit, OnDestroy {
     })
   }
   ngOnDestroy(){
-    this.subscription.unsubscribe()
+    if(this.subscription)
+    {this.subscription.unsubscribe()}
   }
 
-  ngOnChanges(changes){
-    if(changes['recipeList'])
-    this.recipeList = this.service.getRecipeList()
-  }
 }

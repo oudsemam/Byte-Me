@@ -28,7 +28,8 @@ export class SearchBarComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {}
   ngOnDestroy(){
-    this.subscription.unsubscribe
+    if(this.subscription)
+    {this.subscription.unsubscribe()}
   }
   
 
@@ -53,12 +54,9 @@ export class SearchBarComponent implements OnInit, OnDestroy {
 
 
     this.subscription = this.service.searchRecipes(this.searchText,healthfilters,this.catagory,this.cuisine).subscribe((response) =>{
-      let resultList = []
-      for(let recipe of response.hits){
-        resultList.push(recipe)
-      }
+      let resultList = response.hits
       //Pushes response to an array on the service to be called by other components
-      // this.service.addSearch(resultList)
+      this.service.addSearch(resultList)
       this.service.sendList(resultList)
       console.log(resultList, 'Results list showing')
       this.router.navigate(['/results'])

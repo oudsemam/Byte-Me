@@ -26,6 +26,7 @@
 .authBlock {
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
   padding: 15px 30px;
 }
 
@@ -33,7 +34,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  height: 45vh;
   background-color: #5abf73;
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;

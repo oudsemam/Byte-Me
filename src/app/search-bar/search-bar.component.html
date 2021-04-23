@@ -1,2 +1,17 @@
-<input type="text" name="recipe search" [(ngModel)]="searchText" />
-<button (click)="search()">Search</button>
+
+<div class="search-bar-container">
+  <div class="search-bar-with-icon">
+    <fa-icon [icon]="faSearch" class="faSearch"></fa-icon>
+    <input
+      type="text"
+      name="recipe search"
+      [(ngModel)]="searchText"
+      placeholder="Search for recipes..."
+      id="recipe-search-input"
+    />
+  </div>
+  <button (click)="search()" id="recipe-search-button">
+    Search
+  </button>
+</div>
+

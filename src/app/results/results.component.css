@@ -1,0 +1,21 @@
+.explore-top {
+  padding: 5px 15px;
+}
+
+.recipe-card-container {
+  margin: 5px 15px;
+}
+
+.recipe-card-container li {
+  list-style: none;
+}
+
+ul {
+  background-color: #f0f0f0;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.spacer {
+  height: 50px;
+}

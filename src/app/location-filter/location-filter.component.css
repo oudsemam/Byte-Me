@@ -1,4 +1,8 @@
 .location-parent {
-  border: 1px solid black;
-  padding: 5px;
+  border: none;
+  background-color: #4d434b;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 2px;
 }

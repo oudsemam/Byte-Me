@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './login/login.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { ExploreComponent } from './explore/explore.component';
 import { CatagoriesComponent } from './catagories/catagories.component';
@@ -45,13 +44,17 @@ import { VerifyEmailComponent } from './FireBase/verify-email/verify-email.compo
 
 //Auth service
 import { AuthService } from './shared/auth.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
-
+//Sentry service
+import { APP_INITIALIZER, ErrorHandler } from "@angular/core";
+import { Router } from "@angular/router";
+import * as Sentry from "@sentry/angular";
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     MainLayoutComponent,
     ExploreComponent,
     CatagoriesComponent,
@@ -92,12 +95,28 @@ import { AuthService } from './shared/auth.service';
     AngularFirestoreModule, // Only required for database features
     AngularFireAuthModule, // Only required for auth features,
     AngularFireStorageModule, // Only required for storage features
-
+    BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
     FontAwesomeModule,
+    MatTabsModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService,{
+    provide: ErrorHandler,
+    useValue: Sentry.createErrorHandler({
+      showDialog: true,
+    }),
+  },
+  {
+    provide: Sentry.TraceService,
+    deps: [Router],
+  },
+  {
+    provide: APP_INITIALIZER,
+    useFactory: () => () => {},
+    deps: [Sentry.TraceService],
+    multi: true,
+  },],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

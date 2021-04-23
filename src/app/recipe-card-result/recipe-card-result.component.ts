@@ -12,8 +12,17 @@ export class RecipeCardResultComponent implements OnInit {
   @Input() result = null;
 
   faHeart = faHeart;
+  toggle: boolean = false;
+  status = 'Enable';
 
   constructor() {}
 
   ngOnInit(): void {}
-}
+
+  favorite() {}
+
+  enableDisable() {
+    this.toggle = !this.toggle;
+    this.status = this.toggle ? 'Enable' : 'Disable';
+  }
+};

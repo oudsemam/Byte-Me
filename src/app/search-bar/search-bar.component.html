@@ -1,4 +1,3 @@
-
 <div class="search-bar-container">
   <div class="search-bar-with-icon">
     <fa-icon [icon]="faSearch" class="faSearch"></fa-icon>
@@ -10,8 +9,13 @@
       id="recipe-search-input"
     />
   </div>
-  <button (click)="search()" id="recipe-search-button">
-    Search
-  </button>
+  <button (click)="search()" id="recipe-search-button">Search</button>
 </div>
 
+<!-- Parent container for the GF, DF, V, VG, K diet filters -->
+<div class="diet-filter-parent">
+  <app-dietary-filter
+    *ngFor="let diet of dietFilters"
+    [diet]="diet"
+  ></app-dietary-filter>
+</div>

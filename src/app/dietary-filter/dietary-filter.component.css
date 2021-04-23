@@ -5,6 +5,7 @@
   width: 50px;
   height: 50px;
   padding: 5px;
+  border: none;
   border-radius: 5px;
 }
 
@@ -50,5 +51,27 @@
 
 #K {
   background-color: #4b9bed;
+  color: #cbdcff;
+}
+
+#GF:hover {
+  background-color: #f5c056;
+}
+
+#DF:hover {
+  background-color: #78a4a7;
+}
+
+#V:hover {
+  background-color: #e35f33;
+}
+
+#VG:hover {
+  background-color: #c43a4c;
+  color: #ffbfbf;
+}
+
+#K:hover {
+  background-color: #3b80c6;
   color: #cbdcff;
 }

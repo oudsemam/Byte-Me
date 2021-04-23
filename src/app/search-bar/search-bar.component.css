@@ -36,3 +36,10 @@
   padding: 0 20px 0 10px;
   color: #9d9d9d;
 }
+
+.diet-filter-parent {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  padding: 5px 0px;
+}

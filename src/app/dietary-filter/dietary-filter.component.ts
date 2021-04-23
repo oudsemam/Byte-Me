@@ -8,6 +8,16 @@ import { DietaryFilter } from '../dietary-filter';
 })
 export class DietaryFilterComponent implements OnInit {
   @Input() diet: DietaryFilter | null = null;
+
+  onClick() {
+    if (this.diet.clicked === true) {
+      this.diet.clicked = false;
+    } else if (this.diet.clicked === false) {
+      this.diet.clicked = true;
+    }
+    console.log(`${this.diet.name} ${this.diet.clicked}`);
+  }
+
   constructor() {}
 
   ngOnInit(): void {}

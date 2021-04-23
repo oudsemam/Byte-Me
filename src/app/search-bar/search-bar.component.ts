@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { RecipesService } from '../recipes.service';
-
 import { FileDetector } from 'selenium-webdriver';
+import { Router } from '@angular/router';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.css'],
 })
-export class SearchBarComponent implements OnInit {
+export class SearchBarComponent implements OnInit, OnDestroy {
   searchText: string = '';
   faSearch = faSearch;
 
@@ -21,12 +22,18 @@ export class SearchBarComponent implements OnInit {
   keto: boolean = false;
   catagory: string = '';
   cuisine: string = '';
+  subscription: Subscription
 
-  constructor(private service: RecipesService) {}
+  constructor(private service: RecipesService, private router: Router) {}
 
   ngOnInit(): void {}
+  ngOnDestroy(){
+    this.subscription.unsubscribe
+  }
+  
 
   search() {
+    throw new Error("Invalid Search")
     let healthfilters: string[] = [];
     if (this.vegan) {
       healthfilters.push('vegan');
@@ -44,21 +51,17 @@ export class SearchBarComponent implements OnInit {
       healthfilters.push('keto-friendly');
     }
 
-    this.service
-      .searchRecipes(
-        this.searchText,
-        healthfilters,
-        this.catagory,
-        this.cuisine
-      )
-      .subscribe((response) => {
-        let resultList = [];
-        for (let recipe of response.hits) {
-          resultList.push(recipe);
-        }
-        //Pushes response to an array on the service to be called by other components
-        this.service.addSearch(resultList);
-        console.log(resultList, 'Results list showing');
-      });
+
+    this.subscription = this.service.searchRecipes(this.searchText,healthfilters,this.catagory,this.cuisine).subscribe((response) =>{
+      let resultList = []
+      for(let recipe of response.hits){
+        resultList.push(recipe)
+      }
+      //Pushes response to an array on the service to be called by other components
+      this.service.addSearch(resultList)
+      console.log(resultList, 'Results list showing')
+      this.router.navigate(['/results'])
+    });
+
   }
 }

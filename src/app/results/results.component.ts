@@ -25,7 +25,7 @@ export class ResultsComponent implements OnInit, OnChanges{
 
   recipeList: any[] | null = null
 
-  constructor(private service: RecipesService) {}
+  constructor(private service: RecipesService) { }
 
   ngOnInit(): void {
     this.recipeList = this.service.getRecipeList()

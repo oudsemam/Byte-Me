@@ -30,9 +30,11 @@ export class RecipesService {
   }
   addSearch(newRecipes){
     this.recipeList = newRecipes
+    console.log('added search')
   }
 
   getRecipeList(){
+    console.log('getting recipe list')
     return this.recipeList
   }
 }

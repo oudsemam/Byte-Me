@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { RecipesService } from '../recipes.service';
-
 import { FileDetector } from 'selenium-webdriver';
+import { Router } from '@angular/router';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-search-bar',
@@ -22,7 +23,8 @@ export class SearchBarComponent implements OnInit, OnDestroy {
   catagory: string = '';
   cuisine: string = '';
   subscription: Subscription
-  constructor(private service: RecipesService) {}
+
+  constructor(private service: RecipesService, private router: Router) {}
 
   ngOnInit(): void {}
   ngOnDestroy(){
@@ -58,6 +60,7 @@ export class SearchBarComponent implements OnInit, OnDestroy {
       //Pushes response to an array on the service to be called by other components
       this.service.addSearch(resultList)
       console.log(resultList, 'Results list showing')
+      this.router.navigate(['/results'])
     });
 
   }

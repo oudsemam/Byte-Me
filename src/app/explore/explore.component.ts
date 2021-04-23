@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RecipesService } from '../recipes.service';
-import { DietaryFilter } from '../dietary-filter';
 import { CategoryFilter } from '../category-filter';
 import { LocationFilter } from '../location-filter';
 import {
@@ -35,29 +34,6 @@ export class ExploreComponent implements OnInit {
   keto: boolean = false;
   catagory: string = '';
   cuisine: string = '';
-
-  dietFilters: DietaryFilter[] = [
-    {
-      name: 'Gluten-free',
-      initials: 'GF',
-    },
-    {
-      name: 'Dairy-free',
-      initials: 'DF',
-    },
-    {
-      name: 'Vegan',
-      initials: 'V',
-    },
-    {
-      name: 'Vegetarian',
-      initials: 'VG',
-    },
-    {
-      name: 'Keto',
-      initials: 'K',
-    },
-  ];
 
   categoryFilter: CategoryFilter[] = [
     {

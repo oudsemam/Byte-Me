@@ -4,7 +4,7 @@ import { RecipesService } from '../recipes.service';
 import { FileDetector } from 'selenium-webdriver';
 import { Router } from '@angular/router';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-
+import { DietaryFilter } from '../dietary-filter';
 
 @Component({
   selector: 'app-search-bar',
@@ -22,19 +22,46 @@ export class SearchBarComponent implements OnInit, OnDestroy {
   keto: boolean = false;
   catagory: string = '';
   cuisine: string = '';
-  subscription: Subscription
+  subscription: Subscription;
 
   constructor(private service: RecipesService, private router: Router) {}
 
   ngOnInit(): void {}
-  ngOnDestroy(){
-    if(this.subscription)
-    {this.subscription.unsubscribe()}
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
-  
+
+  dietFilters: DietaryFilter[] = [
+    {
+      name: 'Gluten-free',
+      initials: 'GF',
+      clicked: false,
+    },
+    {
+      name: 'Dairy-free',
+      initials: 'DF',
+      clicked: false,
+    },
+    {
+      name: 'Vegan',
+      initials: 'V',
+      clicked: false,
+    },
+    {
+      name: 'Vegetarian',
+      initials: 'VG',
+      clicked: false,
+    },
+    {
+      name: 'Keto',
+      initials: 'K',
+      clicked: false,
+    },
+  ];
 
   search() {
-    
     let healthfilters: string[] = [];
     if (this.vegan) {
       healthfilters.push('vegan');
@@ -52,15 +79,20 @@ export class SearchBarComponent implements OnInit, OnDestroy {
       healthfilters.push('keto-friendly');
     }
 
-
-    this.subscription = this.service.searchRecipes(this.searchText,healthfilters,this.catagory,this.cuisine).subscribe((response) =>{
-      let resultList = response.hits
-      //Pushes response to an array on the service to be called by other components
-      this.service.addSearch(resultList)
-      this.service.sendList(resultList)
-      console.log(resultList, 'Results list showing')
-      this.router.navigate(['/results'])
-    });
-
+    this.subscription = this.service
+      .searchRecipes(
+        this.searchText,
+        healthfilters,
+        this.catagory,
+        this.cuisine
+      )
+      .subscribe((response) => {
+        let resultList = response.hits;
+        //Pushes response to an array on the service to be called by other components
+        this.service.addSearch(resultList);
+        this.service.sendList(resultList);
+        console.log(resultList, 'Results list showing');
+        this.router.navigate(['/results']);
+      });
   }
 }

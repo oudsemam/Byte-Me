@@ -6,14 +6,6 @@
   <app-search-bar></app-search-bar>
 </div>
 
-<!-- Parent container for the GF, DF, V, VG, K diet filters -->
-<div class="diet-filter-parent">
-  <app-dietary-filter
-    *ngFor="let diet of dietFilters"
-    [diet]="diet"
-  ></app-dietary-filter>
-</div>
-
 <!-- Parent container for filtering by meal-type -->
 <div class="category-filter-parent">
   <h2 class="explore-h2">Category</h2>

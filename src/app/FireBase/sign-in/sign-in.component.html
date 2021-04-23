@@ -1,19 +1,24 @@
 <div class="displayTable">
+  <h1 class="logo-container">BYTE ME</h1>
   <div class="displayTableCell">
     <div class="authBlock">
-      <h3>Sign In</h3>
       <div class="formGroup">
+        <label for="Email">Email</label>
         <input
           type="text"
+          name="Email"
+          id="sign-in-user"
           class="formControl"
-          placeholder="Username"
+          placeholder="Email"
           #userName
           required
         />
       </div>
 
       <div class="formGroup">
+        <label for="Password">Password</label>
         <input
+          name="password"
           type="password"
           class="formControl"
           placeholder="Password"
@@ -23,12 +28,13 @@
       </div>
 
       <!-- Calling SignIn Api from AuthService -->
-      <div class="formGroup">
+      <div class="button-container">
         <input
           type="button"
-          class="btn btnPrimary"
+          class="byte-in-btn"
           value="Byte In"
           (click)="authService.SignIn(userName.value, userPassword.value)"
+          routerLink="/explore"
         />
       </div>
 
@@ -43,21 +49,23 @@
           Log in with Google
         </button>
       </div> -->
-
-      <div class="forgotPassword">
-        <span routerLink="/forgot-password">Forgot Password?</span>
-      </div>
     </div>
 
-    <div class="redirectToLogin">
-      <span
-        >Don't have an account?<span
-          class="redirect"
-          routerLink="/register-user"
+    <div class="additional-links">
+      <div class="redirectToLogin">
+        <span
+          >Don't have an account?<a
+            class="redirect"
+            routerLink="/register-user"
+          >
+            Sign Up</a
+          ></span
         >
-          Sign Up</span
-        ></span
-      >
+      </div>
+
+      <div class="forgotPassword">
+        <a routerLink="/forgot-password">Forgot Password?</a>
+      </div>
     </div>
   </div>
 </div>

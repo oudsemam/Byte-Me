@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { LoginComponent } from './login/login.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 import { ExploreComponent } from './explore/explore.component';
 import { CatagoriesComponent } from './catagories/catagories.component';
@@ -56,7 +55,6 @@ import * as Sentry from "@sentry/angular";
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     MainLayoutComponent,
     ExploreComponent,
     CatagoriesComponent,

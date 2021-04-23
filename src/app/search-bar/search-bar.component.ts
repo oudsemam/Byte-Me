@@ -3,6 +3,7 @@ import { Observable, Subscription } from 'rxjs';
 import { RecipesService } from '../recipes.service';
 
 import { FileDetector } from 'selenium-webdriver';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-search-bar',
@@ -11,6 +12,7 @@ import { FileDetector } from 'selenium-webdriver';
 })
 export class SearchBarComponent implements OnInit, OnDestroy {
   searchText: string = '';
+  faSearch = faSearch;
 
   vegan: boolean = false;
   vegatarian: boolean = false;
@@ -47,6 +49,7 @@ export class SearchBarComponent implements OnInit, OnDestroy {
       healthfilters.push('keto-friendly');
     }
 
+
     this.subscription = this.service.searchRecipes(this.searchText,healthfilters,this.catagory,this.cuisine).subscribe((response) =>{
       let resultList = []
       for(let recipe of response.hits){
@@ -56,7 +59,6 @@ export class SearchBarComponent implements OnInit, OnDestroy {
       this.service.addSearch(resultList)
       console.log(resultList, 'Results list showing')
     });
+
   }
-
-
 }

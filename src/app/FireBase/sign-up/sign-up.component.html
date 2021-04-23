@@ -1,19 +1,41 @@
 <div class="displayTable">
+  <h1 class="header-container">WANNA BYTE?</h1>
   <div class="displayTableCell">
-
     <div class="authBlock">
       <h3 class="redirect" routerLink="/sign-in">Sign Up</h3>
 
       <div class="formGroup">
-        <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
+        <label for="email">Email</label>
+        <input
+          name="email"
+          type="email"
+          class="formControl"
+          placeholder="Email Address"
+          #userEmail
+          required
+        />
       </div>
 
       <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Password (min. 6 charaters)" #userPwd required>
+        <label for="password">Password</label>
+        <input
+          name="password"
+          type="password"
+          class="formControl"
+          placeholder="Password (min. 6 charaters)"
+          #userPwd
+          required
+        />
       </div>
 
       <div class="formGroup">
-        <input type="button" class="btn btnPrimary, redirect" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)" routerLink="/sign-in">
+        <input
+          type="button"
+          class="sign-up-btn"
+          value="Sign Up"
+          (click)="authService.SignUp(userEmail.value, userPwd.value)"
+          routerLink="/sign-in"
+        />
       </div>
 
       <!-- <div class="formGroup">
@@ -38,8 +60,10 @@
     </div>
 
     <div class="redirectToLogin">
-      <span>Already have an account? <span class="redirect" routerLink="/sign-in">Log In</span></span>
+      <p>
+        Already have an account?
+        <a class="redirect" routerLink="/sign-in">Log In</a>
+      </p>
     </div>
   </div>
-
 </div>

@@ -1,9 +1,11 @@
 import { Injectable, NgZone } from '@angular/core';
 import { User } from './services/user';
-import { AngularFireAuth } from "@angular/fire/auth"
-import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
-import { Router } from "@angular/router"
-
+import { AngularFireAuth } from '@angular/fire/auth';
+import {
+  AngularFirestore,
+  AngularFirestoreDocument,
+} from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -38,7 +40,7 @@ export class AuthService {
       .then((result) => {
         this.SetUserData(result.user);
         this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['explore']);
         });
       })
       .catch((error) => {
@@ -97,7 +99,7 @@ export class AuthService {
       .signInWithPopup(provider)
       .then((result) => {
         this.ngZone.run(() => {
-          this.router.navigate(['dashboard']);
+          this.router.navigate(['explore']);
         });
         this.SetUserData(result.user);
       })
@@ -120,7 +122,7 @@ export class AuthService {
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
     };
-    localStorage.setItem('user',JSON.stringify(this.userData));
+    localStorage.setItem('user', JSON.stringify(this.userData));
     return userRef.set(this.userData, {
       merge: true,
     });
@@ -134,7 +136,6 @@ export class AuthService {
     });
   }
 }
-
 
 //Returns true when user is logged in and email is verified
 // get isLoggedIn(): boolean {

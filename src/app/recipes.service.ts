@@ -9,6 +9,7 @@ import { RecursiveTemplateAstVisitor } from '@angular/compiler';
 export class RecipesService {
 
   recipeList = []
+  viewRecipe = {}
   private subject = new Subject<any>()
   constructor(private http: HttpClient) { }
 
@@ -48,5 +49,11 @@ export class RecipesService {
     return this.subject.asObservable()
   }
   
+  addRecipe(recipe){
+    this.viewRecipe = recipe
+  }
+  getRecipe(){
+    return this.viewRecipe
+  }
 }
 

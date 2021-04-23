@@ -32,8 +32,9 @@
 
 .logo-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: 45vh;
   background-color: #5abf73;
   border-bottom-left-radius: 30px;
@@ -86,4 +87,11 @@
   margin: 10px;
   font-size: 14px;
   color: #5abf73;
+}
+.logo-container img {
+  width: 250px;
+}
+
+#byte-me-logo-white {
+  padding-top: 120px;
 }

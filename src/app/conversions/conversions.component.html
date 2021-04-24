@@ -44,7 +44,7 @@
         <label for="selectedTo">Convert To</label>
         <select [(ngModel)]="selectedTo">
           <option [value]="item.abbr" *ngFor="let item of convertTo">
-            {{ item.singular }}
+            {{ item.singular }} ({{ item.abbr }})
           </option>
         </select>
       </div>

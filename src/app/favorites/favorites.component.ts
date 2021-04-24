@@ -19,4 +19,6 @@ export class FavoritesComponent implements OnInit {
     this.toggle = !this.toggle;
     this.status = this.toggle ? 'Enable' : 'Disable';
   }
+
+  
 }

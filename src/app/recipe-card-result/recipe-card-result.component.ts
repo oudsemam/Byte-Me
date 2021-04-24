@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { RecipeCardResult } from '../recipe-card-result';
 import { RecipesService } from '../recipes.service';
 
@@ -12,7 +11,6 @@ export class RecipeCardResultComponent implements OnInit {
   @Input() recipeResults: RecipeCardResult | null = null;
   @Input() result = null;
 
-  faHeart = faHeart;
 
   constructor(private service: RecipesService) {}
 

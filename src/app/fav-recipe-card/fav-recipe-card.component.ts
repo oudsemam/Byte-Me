@@ -16,7 +16,7 @@ export class FavRecipeCardComponent implements OnInit {
     this.favoriteRecipes = this.service.getRecipeBookListEvent();
   }
 
-  removeEvent(bucketEvent: any) {
-    this.service.removeRecipeBookListEvent(bucketEvent);
+  removeEvent() {
+    this.service.removeRecipeBookListEvent();
   }
 }

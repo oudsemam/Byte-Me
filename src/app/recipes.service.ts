@@ -8,7 +8,8 @@ import { RecursiveTemplateAstVisitor } from '@angular/compiler';
 })
 export class RecipesService {
   recipeList = [];
-  favoriteRecipes = [{}];
+  favoritesList = [];
+  favoriteRecipe = {};
   viewRecipe = {};
   private subject = new Subject<any>();
   constructor(private http: HttpClient) {}
@@ -65,15 +66,19 @@ export class RecipesService {
   }
 
   getRecipeBookListEvent() {
-    return this.favoriteRecipes;
+    return this.favoritesList;
   }
 
-  addRecipeBookListEvent(event: Event) {
-    this.favoriteRecipes?.push(event);
+  addRecipeBookListEvent() {
+    this.favoritesList?.push(this.addRecipe(recipe));
   }
 
-  removeRecipeBookListEvent(event: Event){
-    this.favoriteRecipes?.splice(this.favoriteRecipes?.indexOf(event),1);
+  removeRecipeBookListEvent(){
+    this.favoritesList?.splice(this.favoritesList?.indexOf(this.favoriteRecipe),1);
   }
+}
+
+function recipe(recipe: any): any {
+  throw new Error('Function not implemented.');
 }
 

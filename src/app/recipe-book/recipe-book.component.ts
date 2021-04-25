@@ -20,11 +20,11 @@ export class RecipeBookComponent implements OnInit {
     console.log(this.recipeList)
   }
 
-  addRecipe (bucketEvent: any) {
-    this.service.addRecipeBookListEvent(bucketEvent)
+  addRecipe () {
+    this.service.addRecipeBookListEvent()
   }
 
-  removeRecipe(bucketEvent: any){
-    this.service.removeRecipeBookListEvent(bucketEvent);
+  removeRecipe(){
+    this.service.removeRecipeBookListEvent();
   };
 }

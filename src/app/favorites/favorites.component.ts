@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { RecipesService } from '../recipes.service';
+import { RecipeCardResult } from '../recipe-card-result';
 
 @Component({
   selector: 'app-favorites',
@@ -8,6 +9,7 @@ import { RecipesService } from '../recipes.service';
   styleUrls: ['./favorites.component.css'],
 })
 export class FavoritesComponent implements OnInit {
+  @Input() favorite: RecipeCardResult | null = null;
   faHeart = faHeart;
   toggle: boolean;
   status = 'Enable';
@@ -26,10 +28,11 @@ export class FavoritesComponent implements OnInit {
     this.enableDisable();
     if (!recipeItem.favorite) {
       recipeItem.favorite = true;
-      this.service.addRecipeBookListEvent(recipeItem);
+      this.service.addRecipeBookListEvent();
     } else if (recipeItem.favorite === true) {
       recipeItem.favorite = false;
-      this.service.removeRecipeBookListEvent(recipeItem);
+      this.service.removeRecipeBookListEvent();
     }
+    console.log(this.service.addRecipeBookListEvent)
   }
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import { Observable } from 'rxjs';
 import { RecipesService } from '../recipes.service';
 
 @Component({
@@ -12,18 +11,11 @@ export class FavoritesComponent implements OnInit {
   faHeart = faHeart;
   toggle: boolean = false;
   status = 'Enable';
-  recipeList: Observable<any> | null = null;
-  searchTerm: string | null = null;
-  dietSelection: string [] | null = null;
-  catagory: string | null = null;
-  cuisine: string | null = null;
+  event: Event[] = [];
 
   constructor(private service: RecipesService) {}
 
-  ngOnInit(): void {
-    // not 100 sure if we need this but going to try
-    this.recipeList = this.service.searchRecipes(this.searchTerm, this.dietSelection, this.catagory, this.cuisine)
-  }
+  ngOnInit(): void { }
 
   enableDisable(){
     this.toggle = !this.toggle;

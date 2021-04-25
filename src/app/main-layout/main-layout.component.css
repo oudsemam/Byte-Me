@@ -10,6 +10,10 @@
   border: 2px solid #4d434b;
   color: #4d434b;
 }
+.log-out:hover {
+  color: white;
+  background-color: #4d434b;
+}
 .icon-nav {
   position: fixed;
   bottom: 0;
@@ -26,6 +30,10 @@
   color: #4d434b;
 }
 
+.nav-icon:hover {
+  color: #5abf73;
+}
+
 .top-container {
   display: flex;
   justify-content: space-between;
@@ -38,10 +46,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0px 50px;
   }
 
   .icon-nav {
     position: relative;
     width: 30vw;
   }
+}
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.icon-nav {
+  border: none;
 }

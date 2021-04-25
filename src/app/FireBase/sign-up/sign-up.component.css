@@ -5,6 +5,7 @@ h3.redirect {
 
 .authBlock {
   width: 85vw;
+  max-width: 500px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -44,6 +45,7 @@ h3.redirect {
 
 .formGroup input {
   padding: 5px;
+  margin-bottom: 10px;
   border: 1px solid #cecece;
   border-radius: 5px;
   width: 70vw;
@@ -65,4 +67,10 @@ h3.redirect {
 
 .redirect {
   font-weight: 500;
+}
+
+@media only screen and (min-width: 500px) {
+  .formGroup input {
+    width: 400px;
+  }
 }

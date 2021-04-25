@@ -93,5 +93,39 @@
 }
 
 #byte-me-logo-white {
-  padding-top: 120px;
+  padding-top: 20vh;
+}
+
+@media only screen and (min-width: 500px) {
+  .displayTable {
+    align-items: center;
+  }
+  .logo-container {
+    width: 100vw;
+  }
+
+  .displayTableCell,
+  .additional-links {
+    width: 500px;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  .displayTableCell {
+    width: 100%;
+    padding: 0px 5vw;
+  }
+  .displayTable {
+    flex-direction: row;
+    height: 100vh;
+  }
+  .logo-container {
+    height: 100vh;
+    border-radius: 0;
+    display: flex;
+    max-width: 50vw;
+  }
+  #byte-me-logo-white {
+    padding: 40vh 30px 0px 30px;
+  }
 }

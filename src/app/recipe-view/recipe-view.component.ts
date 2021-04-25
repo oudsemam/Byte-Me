@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
+import { Observable } from 'rxjs';
 import { RecipeCardResult } from '../recipe-card-result';
 import { RecipeViewDirections } from '../recipe-view-directions';
 import { RecipeViewIngredients } from '../recipe-view-ingredients';
@@ -74,9 +75,11 @@ export class RecipeViewComponent implements OnInit {
   //   },
   // ];
   recipe = null
+  instructions: Observable<any> = null
   constructor(private service: RecipesService) {}
 
   ngOnInit(): void {
    this.recipe = this.service.getRecipe()
+   this.instructions = this.service.getInstructions()
   }
 }

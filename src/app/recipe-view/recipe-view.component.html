@@ -34,10 +34,16 @@
   </mat-tab>
   <mat-tab label="Directions">
     <!-- <app-recipe-view-directions
-      *ngFor="let direction of sampleDirection; let i = index"
-      [direction]="direction"
+      *ngFor="
+        let direction of (instructions | async)?.analyzedInstructions.steps;
+        let i = index
+      "
+      [direction]="direction.step"
       [i]="i"
     ></app-recipe-view-directions> -->
+    <app-recipe-view-directions
+      [direction]="(instructions | async)?.instructions"
+    ></app-recipe-view-directions>
   </mat-tab>
   <mat-tab label="Notes">
     <app-recipe-view-notes></app-recipe-view-notes>

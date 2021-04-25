@@ -1,6 +1,7 @@
 .search-bar-container {
   display: flex;
   width: 100%;
+  margin-bottom: 10px;
 }
 
 .search-bar-with-icon {
@@ -42,6 +43,7 @@
   justify-content: space-between;
   margin-top: 5px;
   padding: 5px 0px;
+  margin-bottom: 10px;
 }
 
 @media only screen and (min-width: 720px) {

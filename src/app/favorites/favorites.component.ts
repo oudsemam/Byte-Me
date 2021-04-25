@@ -9,15 +9,19 @@ import { RecipeCardResult } from '../recipe-card-result';
   styleUrls: ['./favorites.component.css'],
 })
 export class FavoritesComponent implements OnInit {
-  @Input() favorite: RecipeCardResult | null = null;
+  @Input() favorite: any;
   faHeart = faHeart;
   toggle: boolean;
   status = 'Enable';
-  event: Event[] = [];
+  favoriteList:any = [];
 
   constructor(private service: RecipesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log ("this is favorites", this.favorite)
+    this.favoriteList = this.service.getRecipeBookList();
+    this.toggle = this.isFavorited(this.favorite.recipe.uri);
+  }
 
   enableDisable() {
     this.toggle = !this.toggle;
@@ -28,11 +32,19 @@ export class FavoritesComponent implements OnInit {
     this.enableDisable();
     if (!recipeItem.favorite) {
       recipeItem.favorite = true;
-      this.service.addRecipeBookListEvent(this.favorite);
+      this.service.addRecipeBookListEvent(this.favorite.recipe);
     } else if (recipeItem.favorite === true) {
       recipeItem.favorite = false;
-      this.service.removeRecipeBookListEvent(this.favorite);
+      this.service.removeRecipeBookListEvent(this.favorite.recipe);
     }
     console.log(this.service.favoritesList)
+  }
+
+  isFavorited(uri){
+    let foundItem = this.favoriteList.find(item=> item.uri === uri);
+    if (foundItem){
+      return true;
+    }
+    return false;
   }
 }

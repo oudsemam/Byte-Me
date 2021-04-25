@@ -7,12 +7,14 @@ import { RecipesService } from '../recipes.service';
   styleUrls: ['./fav-recipe-card.component.css'],
 })
 export class FavRecipeCardComponent implements OnInit {
+  @Input () recipe:any;
   id: string | null = '';
   favoriteRecipes: any[] | null;
 
   constructor(private service: RecipesService) {}
 
   ngOnInit(): void {
+    console.log("favrecipecard", this.recipe)
     this.favoriteRecipes = this.service.getRecipeBookList();
   }
 

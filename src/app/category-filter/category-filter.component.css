@@ -16,6 +16,7 @@
 .category-name {
   font-weight: 500;
   font-size: 22px;
+  text-decoration: none;
 }
 
 #Appetizers {
@@ -73,4 +74,5 @@
 #Lunch:hover,
 #Snacks:hover {
   background: #5abf73;
+  text-decoration: none;
 }

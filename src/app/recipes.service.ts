@@ -69,13 +69,13 @@ export class RecipesService {
     return this.favoritesList;
   }
 
-  addRecipeBookListEvent(favorite: RecipeCardResult) {
+  addRecipeBookListEvent(favorite) {
     this.favoritesList?.push(favorite);
     console.log(this.favoritesList);
   }
 
-  removeRecipeBookListEvent(favorite: RecipeCardResult){
-    this.favoritesList?.splice(this.favoritesList?.indexOf(favorite),1);
+  removeRecipeBookListEvent(favorite){
+    this.favoritesList?.splice(this.favoritesList?.indexOf(favorite));
   }
 }
 

@@ -7,8 +7,8 @@ import { RecipeViewDirections } from '../recipe-view-directions';
   styleUrls: ['./recipe-view-directions.component.css'],
 })
 export class RecipeViewDirectionsComponent implements OnInit {
-  @Input() direction: RecipeViewDirections | null = null;
-  @Input() i: number = 1;
+  @Input() direction = null;
+  // @Input() i: number = 1;
 
   constructor() {}
 

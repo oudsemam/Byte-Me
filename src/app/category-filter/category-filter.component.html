@@ -1,7 +1,7 @@
 <!-- Container for whole element -->
-<a routerLink="/categoryResults">
+<div (click)="search()">
   <div class="category-parent" id="{{ category.name }}">
     <fa-icon [icon]="category.icon"></fa-icon>
     <p class="category-name">{{ category.name }}</p>
-  </div></a
->
+  </div>
+</div>

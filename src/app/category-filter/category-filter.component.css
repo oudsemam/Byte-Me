@@ -6,9 +6,9 @@
   background-color: #4d434b;
   color: white;
   padding: 10px;
-  width: 150px;
-  width: 150px;
-  height: 150px;
+
+  min-width: 150px;
+  min-height: 150px;
   margin-bottom: 15px;
   border-radius: 8px;
 }
@@ -16,34 +16,63 @@
 .category-name {
   font-weight: 500;
   font-size: 22px;
+  text-decoration: none;
 }
 
 #Appetizers {
   background: url("src/assets/Appetizer.png");
   background-size: 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #Breakfast {
   background: url("src/assets/Breakfast.png");
   background-size: 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #Desserts {
   background: url("src/assets/Desserts.png");
   background-size: 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #Drinks {
   background: url("src/assets/Drinks.png");
   background-size: 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #Lunch {
   background: url("src/assets/Lunch.png");
   background-size: 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #Snacks {
   background: url("src/assets/Snacks.png");
   background-size: 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#Appetizers:hover,
+#Breakfast:hover,
+#Desserts:hover,
+#Drinks:hover,
+#Lunch:hover,
+#Snacks:hover {
+  background: #5abf73;
+  text-decoration: none;
 }

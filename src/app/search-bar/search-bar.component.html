@@ -1,21 +1,23 @@
-<div class="search-bar-container">
-  <div class="search-bar-with-icon">
-    <fa-icon [icon]="faSearch" class="faSearch"></fa-icon>
-    <input
-      type="text"
-      name="recipe search"
-      [(ngModel)]="searchText"
-      placeholder="Search for recipes..."
-      id="recipe-search-input"
-    />
+<div class="search-filter-component">
+  <div class="search-bar-container">
+    <div class="search-bar-with-icon">
+      <fa-icon [icon]="faSearch" class="faSearch"></fa-icon>
+      <input
+        type="text"
+        name="recipe search"
+        [(ngModel)]="searchText"
+        placeholder="Search for recipes..."
+        id="recipe-search-input"
+      />
+    </div>
+    <button (click)="search()" id="recipe-search-button">Search</button>
   </div>
-  <button (click)="search()" id="recipe-search-button">Search</button>
-</div>
 
-<!-- Parent container for the GF, DF, V, VG, K diet filters -->
-<div class="diet-filter-parent">
-  <app-dietary-filter
-    *ngFor="let diet of dietFilters"
-    [diet]="diet"
-  ></app-dietary-filter>
+  <!-- Parent container for the GF, DF, V, VG, K diet filters -->
+  <div class="diet-filter-parent">
+    <app-dietary-filter
+      *ngFor="let diet of dietFilters"
+      [diet]="diet"
+    ></app-dietary-filter>
+  </div>
 </div>

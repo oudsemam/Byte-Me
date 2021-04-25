@@ -1,18 +1,30 @@
 <!-- Logo/Log Out/Nav at Bottom -->
 <app-main-layout></app-main-layout>
 
-<p>shopping-list works!</p>
+<div class="shopping-list-container">
+  <h1>Shopping List</h1>
 
-<label for="“addItem”">Add item to cart: </label>
-<input type="“string”" name="“addItem”" />
-<button>
-  <fa-icon [icon]="faPlus"></fa-icon>
-</button>
-<h3>header for item(s)</h3>
-<div>item itself</div>
-<button>
-  <fa-icon [icon]="faTrash"></fa-icon>
-</button>
-<button name="“edit”">
-  <fa-icon [icon]="faPenSquare"></fa-icon>
-</button>
+  <div class="shopping-list-text-area">
+    <textarea
+      [(ngModel)]="newListItem"
+      aria-label="Add item to shopping list"
+      type="text"
+      id="shoppingList"
+      name="shoppingList"
+      placeholder="Don't forget to buy..."
+    ></textarea>
+    <button (click)="addListItem()" class="add-btn">Add</button>
+  </div>
+  <div class="added-items">
+    <div
+      *ngFor="let item of shoppingList; index as i"
+      [item]="item"
+      class="newListItem"
+    >
+      <p>{{ item }}</p>
+      <button (click)="removeListItem(i)" class="remove-btn">
+        <fa-icon [icon]="faTimes"></fa-icon>
+      </button>
+    </div>
+  </div>
+</div>

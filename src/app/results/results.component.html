@@ -6,6 +6,11 @@
   <app-search-bar></app-search-bar>
 </div>
 
+<div class="no-results" *ngIf="recipeList ? recipeList.length === 0 : ''">
+  <h2>Uh oh! No results were found.</h2>
+  <p>Try searching ingredient keywords like "chicken" or "potatoes"</p>
+</div>
+
 <ul>
   <div class="recipe-card-container">
     <li *ngFor="let result of recipeList">

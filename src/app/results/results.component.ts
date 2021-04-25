@@ -22,27 +22,27 @@ export class ResultsComponent implements OnInit, OnDestroy {
       favorite: true,
     },
   ];
-  result = null
+  result = null;
 
-  recipeList: any[] | null = null
+  recipeList: any[] | null = null;
   subscription: Subscription;
 
-  constructor(private service: RecipesService) { }
+  constructor(private service: RecipesService) {}
 
   ngOnInit(): void {
-    this.recipeList = this.service.getRecipeList()
-    this.subscription = this.service.getList().subscribe(subject =>{
-     console.log('subject')
-      if (subject){
-        this.recipeList = subject
-      }else{
-        this.recipeList = []
+    this.recipeList = this.service.getRecipeList();
+    this.subscription = this.service.getList().subscribe((subject) => {
+      console.log('subject');
+      if (subject) {
+        this.recipeList = subject;
+      } else {
+        this.recipeList = [];
       }
-    })
+    });
   }
-  ngOnDestroy(){
-    if(this.subscription)
-    {this.subscription.unsubscribe()}
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
-
 }

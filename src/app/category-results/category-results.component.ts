@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { RecipeCardResult } from '../recipe-card-result';
 import { RecipesService } from '../recipes.service';
@@ -8,8 +8,8 @@ import { RecipesService } from '../recipes.service';
   templateUrl: './category-results.component.html',
   styleUrls: ['./category-results.component.css'],
 })
-export class CategoryResultsComponent implements OnInit {
-  @Input() sampleResults: RecipeCardResult[] = [
+export class CategoryResultsComponent implements OnInit, OnDestroy {
+  sampleResults: RecipeCardResult[] = [
     {
       glutenFree: true,
       dairyFree: true,
@@ -22,11 +22,27 @@ export class CategoryResultsComponent implements OnInit {
       favorite: true,
     },
   ];
+  result = null
 
-  constructor(private service: RecipesService) {}
+  recipeList: any[] | null = null
+  subscription: Subscription;
 
-  ngOnInit(): void {}
+  constructor(private service: RecipesService) { }
 
+  ngOnInit(): void {
+    this.recipeList = this.service.getRecipeList()
+    this.subscription = this.service.getList().subscribe(subject =>{
+     console.log('subject')
+      if (subject){
+        this.recipeList = subject
+      }else{
+        this.recipeList = []
+      }
+    })
+  }
+  ngOnDestroy(){
+    if(this.subscription)
+    {this.subscription.unsubscribe()}
+  }
 
-  
 }

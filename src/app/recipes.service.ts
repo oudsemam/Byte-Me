@@ -10,6 +10,8 @@ export class RecipesService {
 
   recipeList = []
   viewRecipe = {}
+  recipeUrl = null
+  viewRecipeInstructions:any = []
   private subject = new Subject<any>()
   constructor(private http: HttpClient) { }
 
@@ -51,9 +53,13 @@ export class RecipesService {
   
   addRecipe(recipe){
     this.viewRecipe = recipe
+    this.recipeUrl = recipe.recipe.url
   }
   getRecipe(){
     return this.viewRecipe
+  }
+  getInstructions(){
+    return this.http.get(`https://api.spoonacular.com/recipes/extract?url=${this.recipeUrl}&apiKey=6374b9f8f50a4a0580c1689b595b5aba`)
   }
 }
 

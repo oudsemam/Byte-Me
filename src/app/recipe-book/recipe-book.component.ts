@@ -16,15 +16,16 @@ export class RecipeBookComponent implements OnInit {
   constructor(private service: RecipesService) {}
 
   ngOnInit(): void {
-    this.recipeList = this.service.getRecipeBookListEvent();
+    this.recipeList = this.service.getRecipeBookList();
+    console.log('oninit recipe list')
     console.log(this.recipeList)
   }
 
-  addRecipe () {
-    this.service.addRecipeBookListEvent()
-  }
+  // addRecipe () {
+  //   this.service.addRecipeBookListEvent()
+  // }
 
-  removeRecipe(){
-    this.service.removeRecipeBookListEvent();
-  };
+  // removeRecipe(){
+  //   this.service.removeRecipeBookListEvent();
+  // };
 }

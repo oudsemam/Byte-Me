@@ -28,11 +28,11 @@ export class FavoritesComponent implements OnInit {
     this.enableDisable();
     if (!recipeItem.favorite) {
       recipeItem.favorite = true;
-      this.service.addRecipeBookListEvent();
+      this.service.addRecipeBookListEvent(this.favorite);
     } else if (recipeItem.favorite === true) {
       recipeItem.favorite = false;
-      this.service.removeRecipeBookListEvent();
+      this.service.removeRecipeBookListEvent(this.favorite);
     }
-    console.log(this.service.addRecipeBookListEvent)
+    console.log(this.service.favoritesList)
   }
 }

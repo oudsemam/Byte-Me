@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import { Observable, Subject } from 'rxjs';
 import { RecursiveTemplateAstVisitor } from '@angular/compiler';
+import { RecipeCardResult } from './recipe-card-result';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RecipesService {
   recipeList = [];
-  favoritesList = [];
-  favoriteRecipe = {};
+  favoritesList: RecipeCardResult[] | null = [];
   viewRecipe = {};
   private subject = new Subject<any>();
   constructor(private http: HttpClient) {}
@@ -65,16 +65,17 @@ export class RecipesService {
     return this.viewRecipe;
   }
 
-  getRecipeBookListEvent() {
+  getRecipeBookList() {
     return this.favoritesList;
   }
 
-  addRecipeBookListEvent() {
-    this.favoritesList?.push(this.addRecipe(recipe));
+  addRecipeBookListEvent(favorite: RecipeCardResult) {
+    this.favoritesList?.push(favorite);
+    console.log(this.favoritesList);
   }
 
-  removeRecipeBookListEvent(){
-    this.favoritesList?.splice(this.favoritesList?.indexOf(this.favoriteRecipe),1);
+  removeRecipeBookListEvent(favorite: RecipeCardResult){
+    this.favoritesList?.splice(this.favoritesList?.indexOf(favorite),1);
   }
 }
 

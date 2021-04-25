@@ -13,10 +13,10 @@ export class FavRecipeCardComponent implements OnInit {
   constructor(private service: RecipesService) {}
 
   ngOnInit(): void {
-    this.favoriteRecipes = this.service.getRecipeBookListEvent();
+    this.favoriteRecipes = this.service.getRecipeBookList();
   }
 
-  removeEvent() {
-    this.service.removeRecipeBookListEvent();
-  }
+  // removeEvent() {
+  //   this.service.removeRecipeBookListEvent();
+  // }
 }

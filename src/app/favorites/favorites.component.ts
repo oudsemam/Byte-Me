@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { RecipesService } from '../recipes.service';
 
@@ -9,28 +9,27 @@ import { RecipesService } from '../recipes.service';
 })
 export class FavoritesComponent implements OnInit {
   faHeart = faHeart;
-  toggle: boolean = false;
+  toggle: boolean;
   status = 'Enable';
   event: Event[] = [];
 
   constructor(private service: RecipesService) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
-  enableDisable(){
+  enableDisable() {
     this.toggle = !this.toggle;
     this.status = this.toggle ? 'Enable' : 'Disable';
   }
 
-  saveRecipe(recipeItem: any){
+  saveRecipe(recipeItem: any) {
     this.enableDisable();
     if (!recipeItem.favorite) {
       recipeItem.favorite = true;
       this.service.addRecipeBookListEvent(recipeItem);
-    }
-    else if (recipeItem.favorite === true){
+    } else if (recipeItem.favorite === true) {
       recipeItem.favorite = false;
-      this.service.removeRecipeBookListEvent(recipeItem)
+      this.service.removeRecipeBookListEvent(recipeItem);
     }
   }
 }

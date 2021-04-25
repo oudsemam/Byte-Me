@@ -9,7 +9,7 @@
 </section>
 <section *ngFor="let recipe of recipeList">
     <!-- favorited recipes go here -->
-    <
+    <app-fav-recipe-card></app-fav-recipe-card>
     <div>
         <fa-icon style="color: #5ABF73" [icon]="faTrash" (click)='removeRecipe(event)'></fa-icon>
     </div>

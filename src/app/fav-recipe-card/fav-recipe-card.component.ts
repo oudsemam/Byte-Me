@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { RecipesService } from '../recipes.service';
 
 @Component({
@@ -8,16 +8,15 @@ import { RecipesService } from '../recipes.service';
 })
 export class FavRecipeCardComponent implements OnInit {
   id: string | null = '';
-  favoriteRecipes: any [] | null;
+  favoriteRecipes: any[] | null;
 
   constructor(private service: RecipesService) {}
 
   ngOnInit(): void {
     this.favoriteRecipes = this.service.getRecipeBookListEvent();
-    ;
   }
 
-  removeEvent (bucketEvent: any){
+  removeEvent(bucketEvent: any) {
     this.service.removeRecipeBookListEvent(bucketEvent);
   }
 }

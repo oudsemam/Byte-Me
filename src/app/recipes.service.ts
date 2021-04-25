@@ -8,7 +8,7 @@ import { RecursiveTemplateAstVisitor } from '@angular/compiler';
 })
 export class RecipesService {
   recipeList = [];
-  favoriteRecipes: Event[] | null = [];
+  favoriteRecipes = [{}];
   viewRecipe = {};
   private subject = new Subject<any>();
   constructor(private http: HttpClient) {}
@@ -23,7 +23,7 @@ export class RecipesService {
     let options = '';
     let catagoryInput = '';
     if (catagory != '') {
-      let catagoryInput = `&${catagory}`;
+      catagoryInput = `&${catagory}`;
     }
 
     let cuisineInput = '';

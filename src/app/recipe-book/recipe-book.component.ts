@@ -17,6 +17,11 @@ export class RecipeBookComponent implements OnInit {
 
   ngOnInit(): void {
     this.recipeList = this.service.getRecipeBookListEvent();
+    console.log(this.recipeList)
+  }
+
+  addRecipe (bucketEvent: any) {
+    this.service.addRecipeBookListEvent(bucketEvent)
   }
 
   removeRecipe(bucketEvent: any){

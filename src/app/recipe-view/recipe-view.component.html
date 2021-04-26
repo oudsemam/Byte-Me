@@ -12,7 +12,7 @@
   </div>
 </div> -->
 <div class="bottom-container">
-  <mat-tab-group>
+  <!-- <mat-tab-group>
     <mat-tab label="Ingredients">
       <app-recipe-view-ingredients
         *ngFor="let ingredient of recipe.recipe.ingredientLines"
@@ -20,7 +20,7 @@
       ></app-recipe-view-ingredients>
     </mat-tab>
     <mat-tab label="Directions">
-      <!-- <app-recipe-view-directions
+      <app-recipe-view-directions
       *ngFor="
         let direction of (instructions | async)?.analyzedInstructions.steps;
         let i = index
@@ -28,19 +28,50 @@
       [direction]="direction.step"
       [i]="i"
     ></app-recipe-view-directions> -->
-      <app-recipe-view-directions
+  <!-- <app-recipe-view-directions
         [direction]="(instructions | async)?.instructions"
       ></app-recipe-view-directions>
     </mat-tab>
     <mat-tab label="Notes">
       <app-recipe-view-notes></app-recipe-view-notes>
     </mat-tab>
-  </mat-tab-group>
+  </mat-tab-group> -->
+
+  <div class="no-tab-container">
+    <div class="component-container">
+      <h2>Ingredients</h2>
+      <app-recipe-view-ingredients
+        *ngFor="let ingredient of recipe.recipe.ingredientLines"
+        [ingredient]="ingredient"
+      ></app-recipe-view-ingredients>
+    </div>
+    <div class="component-container">
+      <h2>Directions</h2>
+      <!-- <app-recipe-view-directions
+        *ngFor="
+          let direction of (instructions | async)?.analyzedInstructions.steps;
+          let i = index
+        "
+        [direction]="direction.step"
+        [i]="i"
+      ></app-recipe-view-directions> -->
+      <app-recipe-view-directions
+        [direction]="(instructions | async)?.instructions"
+      ></app-recipe-view-directions>
+    </div>
+    <div class="component-container">
+      <h2>Notes</h2>
+      <app-recipe-view-notes></app-recipe-view-notes>
+    </div>
+  </div>
+
   <div class="recipe-button-container">
+    <!-- <a href="{{ result.recipe.url }}"> -->
     <button class="view-recipe">
       View Full Recipe <fa-icon [icon]="faExternalLinkAlt"></fa-icon>
     </button>
-    <button class="print-recipe">
+    <!-- </a> -->
+    <button class="print-recipe" (click)="printPage()">
       Print Recipe <fa-icon [icon]="faPrint"></fa-icon>
     </button>
   </div>

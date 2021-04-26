@@ -12,5 +12,7 @@ export class RecipeViewDirectionsComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.direction)
+  }
 }

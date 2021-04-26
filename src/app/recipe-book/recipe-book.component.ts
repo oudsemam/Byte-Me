@@ -12,7 +12,7 @@ export class RecipeBookComponent implements OnInit {
   faHeart = faHeart;
   faTrash = faTrash;
   recipeList: any[] | null = [];
-  favorite:any;
+  recipe:any;
 
   constructor(private service: RecipesService) {}
 
@@ -22,11 +22,11 @@ export class RecipeBookComponent implements OnInit {
     console.log(this.recipeList)
   }
 
-  addRecipe () {
-    this.service.addRecipeBookListEvent(this.favorite)
+  addRecipe (recipe) {
+    this.service.addRecipeBookListEvent(recipe);
   }
 
-  removeRecipe(){
-    this.service.removeRecipeBookListEvent((this.favorite),1);
+  removeRecipe(recipe){
+    this.service.removeRecipeBookListEvent((recipe),1);
   };
 }

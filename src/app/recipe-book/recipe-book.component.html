@@ -1,17 +1,31 @@
 <!-- Logo/Log Out/Nav at Bottom -->
 <app-main-layout></app-main-layout>
 
-<h2>Your favorite bytes</h2>
-<section *ngIf='recipeList? recipeList.length===0 :""'>
-    <p>No bytes have been given a green heart <fa-icon [icon]='faHeart'></fa-icon>
+<h1 class="fav-bytes">Favorite Bytes</h1>
+<div class="favorites-container">
+  <section
+    class="no-favorites"
+    *ngIf="recipeList ? recipeList.length === 0 : ''"
+  >
+    <p>
+      No bytes have been given a green heart
+      <fa-icon [icon]="faHeart"></fa-icon>
     </p>
-    <img src="./../../assets/emptyPlate.jpeg" alt="empty plate with sad face drawn on"/>
-</section>
-<section *ngFor="let recipe of recipeList">
+    <img
+      src="./../../assets/emptyPlate.jpeg"
+      alt="empty plate with sad face drawn on"
+    />
+  </section>
+  <section class="yes-favorites" *ngFor="let recipe of recipeList">
     <!-- favorited recipes go here -->
-    <div>
-        <app-fav-recipe-card [recipe]="recipe"></app-fav-recipe-card>
-        <fa-icon [favorite]="favorite" style="color: #5ABF73" [icon]="faTrash" (click)='removeRecipe(this.recipe)'></fa-icon>
+    <div class="fav-contents">
+      <app-fav-recipe-card [recipe]="recipe"></app-fav-recipe-card>
+      <fa-icon
+        [favorite]="favorite"
+        style="color: #5abf73"
+        [icon]="faTrash"
+        (click)="removeRecipe(this.recipe)"
+      ></fa-icon>
     </div>
-    
-</section>
+  </section>
+</div>

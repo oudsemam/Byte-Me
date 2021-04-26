@@ -1,3 +1,52 @@
 fa-icon {
-    color: #5ABF73;
+  color: #5abf73;
+}
+
+.favorites-container {
+  background-color: #f0f0f0;
+  height: 100vh;
+  padding: 15px;
+}
+.no-favorites,
+.yes-favorites {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+.no-favorites img {
+  border-radius: 10px;
+  width: 80vw;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+.yes-favorites {
+  justify-content: space-between;
+  margin: 0px 15px;
+}
+.fav-bytes {
+  padding: 0px 15px;
+}
+
+.fav-contents {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border: 1px solid #cecece;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 5px;
+  margin: 0px 5px;
+}
+
+@media only screen and (min-width: 720px) {
+  .fav-bytes {
+    padding: 0px 50px;
+  }
+  .favorites-container {
+    padding: 15px 50px;
+  }
 }

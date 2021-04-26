@@ -87,3 +87,11 @@ table tr {
 table tr:nth-child(even) {
   background-color: #f0f0f0;
 }
+
+@media only screen and (min-width: 720px) {
+  .conversions h1,
+  .conversion-math-container,
+  .oven-temperatures {
+    padding: 20px 50px;
+  }
+}

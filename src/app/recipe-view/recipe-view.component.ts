@@ -19,6 +19,10 @@ export class RecipeViewComponent implements OnInit {
   faExternalLinkAlt = faExternalLinkAlt;
   faPrint = faPrint;
   faClock = faClock;
+
+  printPage() {
+    window.print();
+  }
   // recipeTiming = [
   //   {
   //     type: 'Prep Time',

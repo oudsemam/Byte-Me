@@ -6,7 +6,6 @@
 .bottom-container {
   padding: 15px;
   background-color: #f0f0f0;
-  height: 100vh;
 }
 
 .recipe-time-parent {
@@ -37,8 +36,9 @@
 }
 
 .recipe-button-container {
-  width: 100vw;
   display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
   align-items: center;
   justify-content: center;
   margin: 20px 5px;
@@ -76,4 +76,28 @@
 .print-recipe:hover {
   background-color: #4d434b;
   color: white;
+}
+
+.component-container {
+  padding: 15px;
+  border: 1px solid #cecece;
+  border-radius: 5px;
+  background-color: white;
+  margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 720px) {
+  .no-tab-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .component-container {
+    width: 40%;
+    margin: 2px 5px;
+  }
+  .recipe-button-container {
+    display: flex;
+    flex-direction: row;
+  }
 }

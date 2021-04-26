@@ -1,4 +1,11 @@
-<div class="direction-item">
-  <!-- <p class="direction-index">{{ i + 1 }}</p> -->
-  <p>{{ direction }}</p>
-</div>
+<section class="no-directions"
+    *ngIf="direction === null">
+  <p>Click the button below for full recipe details.</p>
+</section>
+<section class= "yes-directions">
+  <div class="direction-item">
+    <!-- <p class="direction-index">{{ i + 1 }}</p> -->
+    <p>{{ direction }}</p>
+  </div>
+</section>
+

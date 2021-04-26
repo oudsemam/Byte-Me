@@ -46,6 +46,19 @@
   margin-bottom: 10px;
 }
 
+#random-recipe-button {
+  min-width: 120px;
+  margin-left: 15px;
+  border-radius: 5px;
+  background-color: #5abf73;
+  border: none;
+  color: white;
+  font-weight: 500;
+}
+#random-recipe-button:hover {
+  background-color: #449859;
+}
+
 @media only screen and (min-width: 720px) {
   .search-filter-component {
     display: flex;

@@ -3,7 +3,7 @@ import { Observable, Subscription } from 'rxjs';
 import { RecipesService } from '../recipes.service';
 import { FileDetector } from 'selenium-webdriver';
 import { Router } from '@angular/router';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faRandom, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { DietaryFilter } from '../dietary-filter';
 
 @Component({
@@ -14,6 +14,7 @@ import { DietaryFilter } from '../dietary-filter';
 export class SearchBarComponent implements OnInit, OnDestroy {
   searchText: string = '';
   faSearch = faSearch;
+  faRandom = faRandom;
 
   vegan: boolean = false;
   vegatarian: boolean = false;

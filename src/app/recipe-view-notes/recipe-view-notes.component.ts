@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-recipe-view-notes',
@@ -9,6 +10,7 @@ export class RecipeViewNotesComponent implements OnInit {
   @Input() note: string = '';
   newNote: string;
   addedNotes: string[] = [];
+  faTimes = faTimes;
 
   addNote() {
     if (this.newNote !== null) {
@@ -17,8 +19,8 @@ export class RecipeViewNotesComponent implements OnInit {
     this.newNote = '';
   }
 
-  removeNote(note: string) {
-    this.addedNotes?.splice(this.addedNotes?.indexOf(note), 1);
+  removeNote(i: number) {
+    this.addedNotes.splice(i, 1);
   }
   constructor() {}
 

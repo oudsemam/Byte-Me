@@ -1,6 +1,7 @@
 .direction-item {
   display: flex;
   align-items: center;
+  padding: 10px 15px 25px 15px;
 }
 
 .direction-index {

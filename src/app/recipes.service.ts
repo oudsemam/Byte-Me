@@ -8,13 +8,15 @@ import { RecipeCardResult } from './recipe-card-result';
   providedIn: 'root',
 })
 export class RecipesService {
-  recipeList = []
+  recipeList = [];
   favoritesList: RecipeCardResult[] | null = [];
-  viewRecipe = {}
-  recipeUrl = null
-  viewRecipeInstructions:any = []
-  private subject = new Subject<any>()
-  constructor(private http: HttpClient) { }
+
+  viewRecipe = {};
+  recipeUrl = null;
+  viewRecipeInstructions: any = [];
+  private subject = new Subject<any>();
+  constructor(private http: HttpClient) {}
+
 
   //Retruns list of recipies matching search term in form
   searchRecipes(
@@ -27,7 +29,6 @@ export class RecipesService {
     let catagoryInput = '';
     if (catagory != '') {
       catagoryInput = `&${catagory}`;
-
     }
 
     let cuisineInput = '';
@@ -37,6 +38,7 @@ export class RecipesService {
     for (let option of dietSelection) {
       options += `&health=${option}`;
     }
+    this.searchTerm = searchTerm
     return this.http.get(
       `https://api.edamam.com/search?q=${searchTerm}${options}${catagoryInput}${cuisineInput}&to=30&app_id=a8edfa33&app_key=b218030c46c79eea9911f87e1c55b759`
     );
@@ -57,39 +59,32 @@ export class RecipesService {
     return this.subject.asObservable();
   }
 
-
-  addRecipe(recipe){
-    this.viewRecipe = recipe
-    this.recipeUrl = recipe.recipe.url
-
+  addRecipe(recipe) {
+    this.viewRecipe = recipe;
+    this.recipeUrl = recipe.recipe.url;
   }
   getRecipe() {
     return this.viewRecipe;
   }
 
+
   getInstructions(){
     return this.http.get(
       `https://api.spoonacular.com/recipes/extract?url=${this.recipeUrl}&apiKey=43b60f7a3f104fd1b07f47b93645ca3a`
     );
-    
   }
 
   getRecipeBookList() {
     return this.favoritesList;
   }
-
   addRecipeBookListEvent(favorite) {
     this.favoritesList?.push(favorite);
-    
+  }
+  removeRecipeBookListEvent(favorite) {
+    this.favoritesList?.splice(this.favoritesList?.indexOf(favorite), 1);
   }
 
-  removeRecipeBookListEvent(favorite){
-    this.favoritesList?.splice(this.favoritesList?.indexOf(favorite));
-  }
-
-   notImplemented()  {
+  notImplemented() {
     throw new Error('Function not implemented.');
   }
 }
-
-

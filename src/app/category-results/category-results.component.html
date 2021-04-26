@@ -2,7 +2,7 @@
 <app-main-layout></app-main-layout>
 
 <!-- This is hard-coded and will have to be updated to a variable that displays the category clicked -->
-<h1>Category Name</h1>
+<h1>{{ name }}</h1>
 
 <div class="no-results" *ngIf="recipeList ? recipeList.length === 0 : ''">
   <h2>Uh oh! No results were found.</h2>

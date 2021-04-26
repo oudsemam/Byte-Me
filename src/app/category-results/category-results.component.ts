@@ -23,6 +23,7 @@ export class CategoryResultsComponent implements OnInit, OnDestroy {
     },
   ];
   result = null
+  name: string | null = null
 
   recipeList: any[] | null = null
   subscription: Subscription;
@@ -31,6 +32,7 @@ export class CategoryResultsComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.recipeList = this.service.getRecipeList()
+    this.name = this.service.searchTerm
     this.subscription = this.service.getList().subscribe(subject =>{
      console.log('subject')
       if (subject){

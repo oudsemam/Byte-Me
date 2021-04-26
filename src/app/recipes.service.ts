@@ -13,6 +13,7 @@ export class RecipesService {
   viewRecipe = {}
   recipeUrl = null
   viewRecipeInstructions:any = []
+  searchTerm = null
   private subject = new Subject<any>()
   constructor(private http: HttpClient) { }
 
@@ -37,6 +38,7 @@ export class RecipesService {
     for (let option of dietSelection) {
       options += `&health=${option}`;
     }
+    this.searchTerm = searchTerm
     return this.http.get(
       `https://api.edamam.com/search?q=${searchTerm}${options}${catagoryInput}${cuisineInput}&to=30&app_id=a8edfa33&app_key=b218030c46c79eea9911f87e1c55b759`
     );

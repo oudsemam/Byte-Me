@@ -15,6 +15,10 @@ export class RecipeCardResultComponent implements OnInit {
   constructor(private service: RecipesService) {}
 
   ngOnInit(): void {
+    
+  }
+
+  viewRecipe(){
     this.service.addRecipe(this.result)
   }
 }

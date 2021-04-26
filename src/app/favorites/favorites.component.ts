@@ -13,7 +13,7 @@ export class FavoritesComponent implements OnInit {
   faHeart = faHeart;
   toggle: boolean;
   status = 'Enable';
-  favoriteList:any = [];
+  favoriteList: any = [];
 
   constructor(private service: RecipesService) {}
 
@@ -36,12 +36,11 @@ export class FavoritesComponent implements OnInit {
       recipeItem.favorite = false;
       this.service.removeRecipeBookListEvent(this.favorite.recipe);
     }
-    console.log(this.service.favoritesList)
+    console.log(this.service.favoritesList);
   }
-
-  isFavorited(uri){
-    let foundItem = this.favoriteList.find(item=> item.uri === uri);
-    if (foundItem){
+  isFavorited(uri) {
+    let foundItem = this.favoriteList.find((item) => item.uri === uri);
+    if (foundItem) {
       return true;
     }
     return false;

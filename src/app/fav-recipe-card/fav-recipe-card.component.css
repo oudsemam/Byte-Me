@@ -1,11 +1,7 @@
 .recipe-card-result {
   display: flex;
-  background-color: white;
-  border: 1px solid #d6d6d6;
-  margin: 15px 0px;
-  border-radius: 7px;
+  flex-direction: row;
 }
-
 .recipe-card-result-image {
   width: 150px;
   height: 150px;

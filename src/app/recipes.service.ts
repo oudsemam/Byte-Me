@@ -8,14 +8,15 @@ import { RecipeCardResult } from './recipe-card-result';
   providedIn: 'root',
 })
 export class RecipesService {
-  recipeList = []
+  recipeList = [];
   favoritesList: RecipeCardResult[] | null = [];
-  viewRecipe = {}
-  recipeUrl = null
-  viewRecipeInstructions:any = []
-  searchTerm = null
-  private subject = new Subject<any>()
-  constructor(private http: HttpClient) { }
+
+  viewRecipe = {};
+  recipeUrl = null;
+  viewRecipeInstructions: any = [];
+  private subject = new Subject<any>();
+  constructor(private http: HttpClient) {}
+
 
   //Retruns list of recipies matching search term in form
   searchRecipes(
@@ -28,7 +29,6 @@ export class RecipesService {
     let catagoryInput = '';
     if (catagory != '') {
       catagoryInput = `&${catagory}`;
-
     }
 
     let cuisineInput = '';
@@ -59,37 +59,31 @@ export class RecipesService {
     return this.subject.asObservable();
   }
 
-
-  addRecipe(recipe){
-    this.viewRecipe = recipe
-    this.recipeUrl = recipe.recipe.url
-
+  addRecipe(recipe) {
+    this.viewRecipe = recipe;
+    this.recipeUrl = recipe.recipe.url;
   }
   getRecipe() {
     return this.viewRecipe;
   }
 
-  getInstructions(){
-    return this.http.get(`https://api.spoonacular.com/recipes/extract?url=${this.recipeUrl}&apiKey=1b25c3ebf1834020b5344d58e11f6d39`);
-    
+  getInstructions() {
+    return this.http.get(
+      `https://api.spoonacular.com/recipes/extract?url=${this.recipeUrl}&apiKey=1b25c3ebf1834020b5344d58e11f6d39`
+    );
   }
 
   getRecipeBookList() {
     return this.favoritesList;
   }
-
   addRecipeBookListEvent(favorite) {
     this.favoritesList?.push(favorite);
-    
+  }
+  removeRecipeBookListEvent(favorite) {
+    this.favoritesList?.splice(this.favoritesList?.indexOf(favorite), 1);
   }
 
-  removeRecipeBookListEvent(favorite){
-    this.favoritesList?.splice(this.favoritesList?.indexOf(favorite));
-  }
-
-   notImplemented()  {
+  notImplemented() {
     throw new Error('Function not implemented.');
   }
 }
-
-

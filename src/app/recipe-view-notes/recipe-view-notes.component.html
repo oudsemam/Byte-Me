@@ -8,10 +8,16 @@
     placeholder="Take a note..."
   ></textarea>
   <div class="notes-area">
-    <div *ngFor="let note of addedNotes" [note]="note" class="newNote">
-      <p>{{ note }}</p>
-      <button (click)="removeNote()">remove</button>
-    </div>
+    <button class="add-note" (click)="addNote()">Add</button>
   </div>
-  <button (click)="addNote()">Add</button>
+  <div
+    *ngFor="let note of addedNotes; index as i"
+    [note]="note"
+    class="newNote"
+  >
+    <p>{{ note }}</p>
+    <button (click)="removeNote(i)" class="remove-note">
+      <fa-icon [icon]="faTimes"></fa-icon>
+    </button>
+  </div>
 </div>

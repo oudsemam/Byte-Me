@@ -3,37 +3,24 @@
 <!-- Container for top recipe card section -->
 <div class="recipe-top-container">
   <app-recipe-card-result [result]="recipe"></app-recipe-card-result>
-
-  <!-- Container for entire time componenet -->
-  <div class="recipe-time-parent">
-    <!-- clock icon -->
-    <fa-icon [icon]="faClock"></fa-icon>
-    <!-- container for values -->
-    <!-- <div class="recipe-time-child">
-      <app-recipe-card-time
-        *ngFor="let time of recipeTiming"
-        [time]="time"
-      ></app-recipe-card-time>
-    </div> -->
-  </div>
-
-  <!-- Container for entire servings componenet -->
+</div>
+<!-- Container for entire servings componenet
   <div class="servings-parent">
     <app-recipe-card-servings
       [serving]="recipe.recipe.yield"
     ></app-recipe-card-servings>
   </div>
-</div>
-
-<mat-tab-group>
-  <mat-tab label="Ingredients">
-    <app-recipe-view-ingredients
-      *ngFor="let ingredient of recipe.recipe.ingredientLines"
-      [ingredient]="ingredient"
-    ></app-recipe-view-ingredients>
-  </mat-tab>
-  <mat-tab label="Directions">
-    <!-- <app-recipe-view-directions
+</div> -->
+<div class="bottom-container">
+  <mat-tab-group>
+    <mat-tab label="Ingredients">
+      <app-recipe-view-ingredients
+        *ngFor="let ingredient of recipe.recipe.ingredientLines"
+        [ingredient]="ingredient"
+      ></app-recipe-view-ingredients>
+    </mat-tab>
+    <mat-tab label="Directions">
+      <!-- <app-recipe-view-directions
       *ngFor="
         let direction of (instructions | async)?.analyzedInstructions.steps;
         let i = index
@@ -41,13 +28,21 @@
       [direction]="direction.step"
       [i]="i"
     ></app-recipe-view-directions> -->
-    <app-recipe-view-directions
-      [direction]="(instructions | async)?.instructions"
-    ></app-recipe-view-directions>
-  </mat-tab>
-  <mat-tab label="Notes">
-    <app-recipe-view-notes></app-recipe-view-notes>
-  </mat-tab>
-</mat-tab-group>
-
+      <app-recipe-view-directions
+        [direction]="(instructions | async)?.instructions"
+      ></app-recipe-view-directions>
+    </mat-tab>
+    <mat-tab label="Notes">
+      <app-recipe-view-notes></app-recipe-view-notes>
+    </mat-tab>
+  </mat-tab-group>
+  <div class="recipe-button-container">
+    <button class="view-recipe">
+      View Full Recipe <fa-icon [icon]="faExternalLinkAlt"></fa-icon>
+    </button>
+    <button class="print-recipe">
+      Print Recipe <fa-icon [icon]="faPrint"></fa-icon>
+    </button>
+  </div>
+</div>
 <!-- Notes container -->

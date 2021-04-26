@@ -18,7 +18,6 @@ export class FavoritesComponent implements OnInit {
   constructor(private service: RecipesService) {}
 
   ngOnInit(): void {
-    console.log ("this is favorites", this.favorite)
     this.favoriteList = this.service.getRecipeBookList();
     this.toggle = this.isFavorited(this.favorite.recipe.uri);
   }

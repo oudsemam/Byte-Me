@@ -16,6 +16,7 @@ import { RecipesService } from '../recipes.service';
   styleUrls: ['./recipe-view.component.css'],
 })
 export class RecipeViewComponent implements OnInit {
+  // @Input() result = null;
   faExternalLinkAlt = faExternalLinkAlt;
   faPrint = faPrint;
   faClock = faClock;

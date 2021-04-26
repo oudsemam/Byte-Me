@@ -10,7 +10,7 @@ import { RecipeCardResult } from './recipe-card-result';
 export class RecipesService {
   recipeList = [];
   favoritesList: RecipeCardResult[] | null = [];
-
+  searchTerm=null;
   viewRecipe = {};
   recipeUrl = null;
   viewRecipeInstructions: any = [];

@@ -1,7 +1,12 @@
 <!-- Container for whole element -->
-<div class="diet-parent">
+<div class="diet-parent" ng-app="ap" ng-controller="con">
   <!-- Container for initials color block -->
-  <button class="initials-parent" id="{{ diet.initials }}" (click)="onClick()">
+  <button
+    class="initials-parent"
+    id="{{ diet.initials }}"
+    (click)="onClick()"
+    [class.isActive]="isActive"
+  >
     <p class="dietary-initials">{{ diet.initials }}</p>
   </button>
   <!-- Description under color block -->

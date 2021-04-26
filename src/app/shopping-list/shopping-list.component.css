@@ -49,3 +49,19 @@
   background-color: #e9f9ec;
   padding: 0px 10px 0px 20px;
 }
+
+@media only screen and (min-width: 720px) {
+  .shopping-list-container h1,
+  .shopping-list-text-area {
+    padding: 20px 50px;
+  }
+  .newListItem {
+    margin: 10px 40px;
+  }
+  .added-items {
+    margin-top: 20px;
+  }
+  /* .shopping-list-text-area textarea {
+    margin: 0px 50px;
+  } */
+}

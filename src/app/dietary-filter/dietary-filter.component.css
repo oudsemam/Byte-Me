@@ -75,3 +75,7 @@
   background-color: #3b80c6;
   color: #cbdcff;
 }
+
+.isActive {
+  border: 5px solid#4d434b;
+}

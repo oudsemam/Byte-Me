@@ -8,6 +8,7 @@ import { DietaryFilter } from '../dietary-filter';
 })
 export class DietaryFilterComponent implements OnInit {
   @Input() diet: DietaryFilter | null = null;
+  isActive = false;
 
   onClick() {
     if (this.diet.clicked === true) {
@@ -16,6 +17,7 @@ export class DietaryFilterComponent implements OnInit {
       this.diet.clicked = true;
     }
     console.log(`${this.diet.name} ${this.diet.clicked}`);
+    this.isActive = !this.isActive;
   }
 
   constructor() {}

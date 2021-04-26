@@ -43,21 +43,17 @@ export class RecipesService {
   }
   addSearch(newRecipes) {
     this.recipeList = newRecipes;
-    console.log('added search');
   }
 
   getRecipeList() {
-    console.log('getting recipe list');
     return this.recipeList;
   }
 
   sendList(recipeList: any[]) {
     this.subject.next(recipeList);
-    console.log('sending list');
   }
 
   getList(): Observable<any> {
-    console.log('getting list');
     return this.subject.asObservable();
   }
 
@@ -82,14 +78,16 @@ export class RecipesService {
 
   addRecipeBookListEvent(favorite) {
     this.favoritesList?.push(favorite);
-    console.log(this.favoritesList);
+    
   }
 
   removeRecipeBookListEvent(favorite){
     this.favoritesList?.splice(this.favoritesList?.indexOf(favorite));
   }
+
+   notImplemented()  {
+    throw new Error('Function not implemented.');
+  }
 }
 
-function recipe(recipe: any): any {
-  throw new Error('Function not implemented.');
-}
+

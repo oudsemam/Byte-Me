@@ -11,7 +11,7 @@
       />
     </div>
     <button (click)="search()" id="recipe-search-button">Search</button>
-    <button id="random-recipe-button">
+    <button id="random-recipe-button" (click)="error()">
       <span id="random">Random </span><fa-icon [icon]="faRandom"></fa-icon>
     </button>
   </div>

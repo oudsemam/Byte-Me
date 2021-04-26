@@ -92,8 +92,11 @@ export class SearchBarComponent implements OnInit, OnDestroy {
         //Pushes response to an array on the service to be called by other components
         this.service.addSearch(resultList);
         this.service.sendList(resultList);
-        console.log(resultList, 'Results list showing');
         this.router.navigate(['/results']);
       });
+  }
+
+  error(){
+    this.service.notImplemented()
   }
 }

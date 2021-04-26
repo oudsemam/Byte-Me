@@ -34,7 +34,7 @@ export class FavoritesComponent implements OnInit {
       this.service.addRecipeBookListEvent(this.favorite.recipe);
     } else if (recipeItem.favorite === true) {
       recipeItem.favorite = false;
-      this.service.removeRecipeBookListEvent(this.favorite.recipe);
+      this.service.removeRecipeBookListEvent((this.favorite.recipe), 1);
     }
     console.log(this.service.favoritesList)
   }

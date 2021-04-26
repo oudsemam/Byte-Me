@@ -9,7 +9,8 @@ import { RecipeCardResult } from './recipe-card-result';
 })
 export class RecipesService {
   recipeList = []
-  favoritesList: RecipeCardResult[] | null = [];
+  favoritesList: RecipeCardResult[] | null = []
+  favorite = {}
   viewRecipe = {}
   recipeUrl = null
   viewRecipeInstructions:any = []
@@ -81,8 +82,8 @@ export class RecipesService {
     
   }
 
-  removeRecipeBookListEvent(favorite){
-    this.favoritesList?.splice(this.favoritesList?.indexOf(favorite));
+  removeRecipeBookListEvent(favorite: any, number: number){
+    this.favoritesList?.splice(this.favoritesList?.indexOf(favorite), 1);
   }
 
    notImplemented()  {

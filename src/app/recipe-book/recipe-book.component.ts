@@ -27,6 +27,6 @@ export class RecipeBookComponent implements OnInit {
   }
 
   removeRecipe(){
-    this.service.removeRecipeBookListEvent(this.favorite);
+    this.service.removeRecipeBookListEvent((this.favorite),1);
   };
 }

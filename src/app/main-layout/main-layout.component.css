@@ -30,7 +30,7 @@
   color: #4d434b;
 }
 
-.nav-icon:hover {
+.router-active {
   color: #5abf73;
 }
 

@@ -67,9 +67,10 @@ export class RecipesService {
     return this.viewRecipe;
   }
 
-  getInstructions() {
+
+  getInstructions(){
     return this.http.get(
-      `https://api.spoonacular.com/recipes/extract?url=${this.recipeUrl}&apiKey=1b25c3ebf1834020b5344d58e11f6d39`
+      `https://api.spoonacular.com/recipes/extract?url=${this.recipeUrl}&apiKey=43b60f7a3f104fd1b07f47b93645ca3a`
     );
   }
 

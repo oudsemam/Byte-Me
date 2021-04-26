@@ -1,11 +1,12 @@
-.direction-item {
+.no-direction-item, .yes-direction-item {
   display: flex;
   align-items: center;
   padding: 10px 15px 25px 15px;
 }
 
-.direction-index {
+.no-direction-index, .yes-direction-item {
   margin: 1px 5px 1px 1px;
   background-color: lightgray;
   padding: 2px;
 }
+

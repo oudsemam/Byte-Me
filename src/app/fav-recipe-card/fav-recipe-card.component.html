@@ -1,16 +1,13 @@
 <!-- <app-recipe-card-result></app-recipe-card-result> -->
-<div>
-  <h4>{{ recipe.label }}</h4>
+<div class="recipe-card-result">
   <img
-    routerLink="/recipeView"
     class="recipe-card-result-image"
     src="{{ recipe.image }}"
     onerror="this.onerror=null;this.src='/assets/byte-me-default.png';"
     alt="{{ recipe.label }}"
-    (click)="viewRecipe()"
   />
   <div class="recipe-card-top-info">
-    <h3 routerLink="/recipeView" (click)="viewRecipe()">{{ recipe.label }}</h3>
+    <h3>{{ recipe.label }}</h3>
     <div class="recipe-card-bottom-info">
       <p class="recipe-card-type">{{ recipe.dishType }}</p>
       <!-- WIll have to update to link to boolean -->

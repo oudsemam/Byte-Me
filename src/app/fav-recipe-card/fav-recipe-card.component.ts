@@ -22,9 +22,7 @@ export class FavRecipeCardComponent implements OnInit {
   removeEvent() {
     this.service.removeRecipeBookListEvent(this.favoriteRecipes);
   }
-
-  // viewRecipe() {
-  //   console.log(this.recipe);
-  //   // this.service.addRecipe(this.recipe);
-  // }
+  removeRecipe(recipe) {
+    this.service.removeRecipeBookListEvent(recipe);
+  }
 }

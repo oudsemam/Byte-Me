@@ -1,5 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { faClock } from '@fortawesome/free-solid-svg-icons';
+import {
+  faClock,
+  faExternalLinkAlt,
+  faPrint,
+} from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { RecipeCardResult } from '../recipe-card-result';
 import { RecipeViewDirections } from '../recipe-view-directions';
@@ -12,6 +16,8 @@ import { RecipesService } from '../recipes.service';
   styleUrls: ['./recipe-view.component.css'],
 })
 export class RecipeViewComponent implements OnInit {
+  faExternalLinkAlt = faExternalLinkAlt;
+  faPrint = faPrint;
   faClock = faClock;
   // recipeTiming = [
   //   {
@@ -74,12 +80,12 @@ export class RecipeViewComponent implements OnInit {
   //     direction: 'DAVID!',
   //   },
   // ];
-  recipe = null
-  instructions: Observable<any> = null
+  recipe = null;
+  instructions: Observable<any> = null;
   constructor(private service: RecipesService) {}
 
   ngOnInit(): void {
-   this.recipe = this.service.getRecipe()
-   this.instructions = this.service.getInstructions()
+    this.recipe = this.service.getRecipe();
+    this.instructions = this.service.getInstructions();
   }
 }

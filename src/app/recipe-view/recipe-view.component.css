@@ -1,7 +1,12 @@
 .recipe-top-container {
-  border: 1px solid green;
   padding: 5px;
-  margin: 5px;
+  margin: 5px 15px 0px 15px;
+}
+
+.bottom-container {
+  padding: 15px;
+  background-color: #f0f0f0;
+  height: 100vh;
 }
 
 .recipe-time-parent {
@@ -15,13 +20,60 @@
 }
 
 .ingredient-parent {
-  border: 1px solid green;
   padding: 5px;
   margin: 5px;
 }
 
 .direction-parent {
-  border: 1px solid green;
   padding: 5px;
   margin: 5px;
+}
+
+.mat-tab-group {
+  padding: 0px 10px;
+  border: 1px solid #cecece;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.recipe-button-container {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 5px;
+}
+
+.view-recipe,
+.print-recipe {
+  margin: 20px 5px 0px 5px;
+  width: 180px;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  font-weight: 500;
+}
+.fa-icon {
+  padding-left: 5px;
+}
+.view-recipe {
+  color: white;
+  background-color: #5abf73;
+  border: 2px solid #5abf73;
+}
+
+.view-recipe:hover {
+  background-color: #449859;
+  border: 2px solid #449859;
+}
+
+.print-recipe {
+  color: #4d434b;
+  border: 2px solid #4d434b;
+  background-color: #f0f0f0;
+}
+
+.print-recipe:hover {
+  background-color: #4d434b;
+  color: white;
 }

@@ -9,6 +9,21 @@
 .ingredient-parent {
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
+  border-bottom: 2px dashed #cecece;
+  padding: 10px;
   margin: 2px 0;
+}
+
+.add-to-shopping-list {
+  width: 22px;
+  height: 22px;
+  border-radius: 2px;
+  border: none;
+  background-color: #f0f0f0;
+  color: #4d434b;
+}
+
+.add-to-shopping-list:hover {
+  color: white;
+  background-color: #5abf73;
 }

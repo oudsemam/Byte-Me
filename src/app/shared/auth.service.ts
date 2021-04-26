@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import { User } from './services/user';
+import { User } from './guard/services/user';
 import { AngularFireAuth } from '@angular/fire/auth';
 import {
   AngularFirestore,
@@ -21,9 +21,9 @@ export class AuthService {
   ) {
     /* Saving user data in localstorage when 
     logged in and setting up null when logged out */
-    this.afAuth.authState.subscribe((user) => {
-      if (user) {
-        this.userData = user;
+    this.afAuth.authState.subscribe((User) => {
+      if (User) {
+        this.userData = User;
         localStorage.setItem('user', JSON.stringify(this.userData));
         JSON.parse(localStorage.getItem('user'));
       } else {
@@ -111,18 +111,18 @@ export class AuthService {
   /* Setting up user data when sign in with username/password, 
   sign up with username/password and sign in with social auth  
   provider in Firestore database using AngularFirestore + AngularFirestoreDocument service */
-  SetUserData(user) {
+  SetUserData(User) {
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(
-      `users/${user.uid}`
+      `users/${User.uid}`
     );
     this.userData = {
-      uid: user.uid,
-      email: user.email,
-      displayName: user.displayName,
-      photoURL: user.photoURL,
-      emailVerified: user.emailVerified,
+      uid: User.uid,
+      email: User.email,
+      displayName: User.displayName,
+      photoURL: User.photoURL,
+      emailVerified: User.emailVerified,
     };
-    localStorage.setItem('user', JSON.stringify(this.userData));
+    localStorage.setItem('User', JSON.stringify(this.userData));
     return userRef.set(this.userData, {
       merge: true,
     });
@@ -131,7 +131,7 @@ export class AuthService {
   // Sign out
   SignOut() {
     return this.afAuth.signOut().then(() => {
-      localStorage.removeItem('user');
+      localStorage.removeItem('User');
       this.router.navigate(['sign-in']);
     });
   }

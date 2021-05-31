@@ -35,7 +35,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { environment } from '../environments/environment';
+import { environment } from 'environments/environment'
 import { DashboardComponent } from './FireBase/dashboard/dashboard.component';
 import { SignInComponent } from './FireBase/sign-in/sign-in.component';
 import { SignUpComponent } from './FireBase/sign-up/sign-up.component';

@@ -33,6 +33,7 @@ speed-measure-plugin*.json
 
 # misc
 /config.js
+/environments
 /.sass-cache
 /connect.lock
 /coverage

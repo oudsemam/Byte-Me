@@ -32,6 +32,7 @@
     "bootstrap": "^4.6.0",
     "convert-units": "^2.3.4",
     "firebase": "^8.4.1",
+    "recipe-app": "github:oudsemam/Byte-Me",
     "recipe-unit-converter": "^2.3.3",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",

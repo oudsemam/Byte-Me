@@ -29,6 +29,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
     "@sentry/angular": "^6.3.0",
     "@sentry/tracing": "^6.3.0",
+    "bfg": "^0.3.0",
     "bootstrap": "^4.6.0",
     "convert-units": "^2.3.4",
     "firebase": "^8.4.1",
